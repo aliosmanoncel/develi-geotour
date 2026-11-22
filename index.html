@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Develi Jeo-Tur v10 — Erciyes'ten Seyhan'a</title>
-<meta name="description" content="Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar (MTA 2026), tarihsel depremler, arkeoloji, doğa ve arıcılık katmanlarını kaynaklarıyla gösteren etkileşimli harita.">
+<title>Kayseri Develi Jeo-Tur | Erciyes–Zamantı–Seyhan Dijital Jeoturizm Atlası</title>
+<meta name="description" content="Kayseri Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar (MTA 2026), tarihsel depremler, arkeoloji, doğa ve arıcılık katmanlarını kaynaklarıyla gösteren etkileşimli harita.">
 <meta name="theme-color" content="#1f2a37">
-<meta property="og:title" content="Develi Jeo-Tur v10 — Erciyes'ten Seyhan'a">
+<meta property="og:title" content="Kayseri Develi Jeo-Tur | Erciyes–Zamantı–Seyhan Dijital Jeoturizm Atlası">
 <meta property="og:description" content="Kaynaklı, katmanlı jeoturizm haritası: MTA 2026 diri fayları, tarihsel depremler, Fıraktın, Gereme, Sultan Sazlığı ve Zamantı rotası.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -68,7 +68,7 @@
 <body>
 <header>
   <div class="hrow">
-    <h1>DEVELİ JEO-TUR <small>v10 · Erciyes'ten Seyhan'a</small></h1>
+    <h1>KAYSERİ DEVELİ JEO-TUR <small>v10 · Dijital Jeoturizm Atlası</small></h1>
     <div class="hbtns">
       <button class="ibtn" id="btnLocate" title="Konumum" aria-label="Konumumu göster"><i class="fa-solid fa-location-crosshairs"></i></button>
       <button class="ibtn" id="btnMusic" title="Arka plan müziği" aria-label="Arka plan müziği" aria-pressed="false"><i class="fa-solid fa-music"></i></button>
@@ -109,7 +109,7 @@
 <footer>
   <p><b>Fay verisi:</b> <span id="faultCite">Elmacı, H. vd., 2026. Türkiye Diri Fay Haritası. MTA, Özel Yayın Serisi-60.</span></p>
   <p><b>Harita altlığı:</b> © OpenStreetMap katkıcıları · © CARTO. <b>Müzik:</b> Pixabay (bağlama enstrümantal), varsayılan olarak kapalı.</p>
-  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.4</span></p>
+  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.5</span></p>
 </footer>
 <div id="toast" role="status"></div>
 
@@ -288,7 +288,7 @@ function focusPoint(id, scroll){
 
 function share(n){
   var url = location.href.split('#')[0] + (n ? '#' + n.id : '');
-  var title = n ? n.ad + ' — Develi Jeo-Tur' : 'Develi Jeo-Tur v10';
+  var title = n ? n.ad + ' — Kayseri Develi Jeo-Tur' : 'Kayseri Develi Jeo-Tur';
   if (navigator.share){ navigator.share({title:title, url:url}).catch(function(){}); return; }
   if (navigator.clipboard){ navigator.clipboard.writeText(url).then(function(){ toast('Bağlantı kopyalandı'); }, function(){ toast(url); }); }
   else toast(url);
@@ -300,10 +300,10 @@ function exportKML(){
   var pm = mapped.map(function(n){
     return '<Placemark><name>' + x(n.ad) + '</name><description>' + x(n.aciklama + ' [' + DUR[n.konum] + ']') + '</description><Point><coordinates>' + n.lon + ',' + n.lat + ',0</coordinates></Point></Placemark>';
   }).join('');
-  var kml = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Develi Jeo-Tur v10</name>' + pm + '</Document></kml>';
+  var kml = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Kayseri Develi Jeo-Tur v10</name>' + pm + '</Document></kml>';
   var a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([kml], {type:'application/vnd.google-earth.kml+xml'}));
-  a.download = 'DeveliJeoTur-v10.kml'; document.body.appendChild(a); a.click(); a.remove();
+  a.download = 'KayseriDeveliJeoTur-v10.kml'; document.body.appendChild(a); a.click(); a.remove();
   toast('KML indirildi: ' + mapped.length + ' nokta');
 }
 

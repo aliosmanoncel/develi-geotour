@@ -1,7 +1,7 @@
 {
- "surum": "10.0.4",
+ "surum": "10.0.5",
  "guncelleme": "2026-11-22",
- "aciklama": "Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
+ "aciklama": "Kayseri Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
  "konum_durumu": {
   "dogrulandi": "Koordinat bağımsız bir kaynaktan alındı (kaynak alanında belirtilir).",
   "yaklasik": "Koordinat yerleşim veya alan merkezidir; noktanın kendisi değildir.",

@@ -1,11 +1,16 @@
-# Develi Jeo-Tur v10 — Erciyes'ten Seyhan'a
+# 🌋 Kayseri Develi Jeo-Tur | Erciyes–Zamantı–Seyhan Dijital Jeoturizm Atlası
+
+Jeoloji, tarihsel depremler, arkeolojik miras, doğal çevre ve arıcılık ekseninde kaynaklı ve etkileşimli bir coğrafi keşif.
 
 > **Bilimsel durum:** Depo açık erişimlidir; içerik doğrulama sürecindedir. Deponun genel erişime açılması, bilimsel içeriğin nihai olarak onaylandığı anlamına gelmez. Doğrulama durumu her noktada ayrı ayrı belirtilir; açık konular `docs/ICERIK-DENETIMI.md` §4'tedir.
 
 Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar, tarihsel depremler, arkeoloji, doğa ve arıcılık katmanlarını **kaynaklarıyla** gösteren etkileşimli harita.
 
-**Canlı:** `https://aliosmanoncel.github.io/develi-geotour/` (GitHub Pages, `main` dalı kökünden yayımlanır)
-**Blog:** [Develi Dijital Rehberi (2025)](https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html)
+**Canlı:** https://aliosmanoncel.github.io/kayseri-develi-geotour/ (GitHub Pages, `main` dalı kökünden yayımlanır)
+**Blog rehber sayfası:** `https://aliosmanoncel.blogspot.com/p/kayseri-develi-geotour.html` (yayımlanınca)
+**Önceki sürüm (v9, 2025):** [Develi Dijital Rehberi](https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html)
+
+> Depo adı 2026-11-22'de `develi-geotour` → `kayseri-develi-geotour` olarak değiştirildi. Eski depo adresi GitHub tarafından yönlendirilir; eski Pages adresi (`/develi-geotour/`) artık çalışmaz.
 
 ## İlke
 

@@ -1,4 +1,4 @@
-# Mimari değerlendirme — Develi Jeo-Tur v10
+# Mimari değerlendirme — Kayseri Develi Jeo-Tur v10
 
 **Tarih:** 2026-11-22 · **Karşılaştırılan:** `kafz-geowalk` (index.html, 644 satır, Şubat 2026) ve `bal-yolu-harita` (bal-yolu-harita.html, 1029 satır, Haziran 2026, v11) · **Temel:** Develi Jeo-Tur v9 (Kasım 2025)
 

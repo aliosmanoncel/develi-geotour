@@ -1,5 +1,10 @@
 # Sürüm notu
 
+## 10.0.5 — 2026-11-22
+
+- Proje adı **Kayseri Develi Jeo-Tur**; depo `kayseri-develi-geotour`. Yeni canlı adres: https://aliosmanoncel.github.io/kayseri-develi-geotour/
+- Başlık: "Kayseri Develi Jeo-Tur | Erciyes–Zamantı–Seyhan Dijital Jeoturizm Atlası". İçerik değişikliği yok.
+
 ## 10.0.4 — 2026-11-22
 
 - Üçüncü doğrulama boyutu: **kaynak güvenilirliği** (birincil / ikincil / yok). Her nokta ve her kaynak etiketlendi; uygulamada üçüncü rozet. Dağılım: 5 birincil, 9 ikincil, 2 kaynaksız.
@@ -11,7 +16,7 @@
 ## 10.0.2 — 2026-11-22
 
 - Arayüz: haritaya kaydırıldığında üst kısmın yapışkan başlık altında kalması düzeltildi (`scroll-margin-top`). İçerik değişikliği yok.
-- GitHub Pages ile yayımlandı: https://aliosmanoncel.github.io/develi-geotour/
+- GitHub Pages ile yayımlandı: https://aliosmanoncel.github.io/develi-geotour/ (eski adres; 10.0.5'te değişti)
 
 ## 10.0.1 — 2026-11-22
 
