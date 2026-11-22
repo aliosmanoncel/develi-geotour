@@ -1,5 +1,5 @@
 {
- "surum": "10.0.2",
+ "surum": "10.0.3",
  "guncelleme": "2026-11-22",
  "aciklama": "Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
  "konum_durumu": {
@@ -69,12 +69,12 @@
   {
    "id": "mantar-kaya-yenice",
    "katman": "jeoloji",
-   "ad": "Mezarlı Mantar Kaya (Yenice, Develi)",
+   "ad": "Mezarlı Mantar Kaya (Yenice köyü, Develi)",
    "lat": null,
    "lon": null,
    "konum": "yayimlanmadi",
    "icerik": "bekliyor",
-   "aciklama": "Gazeteci-yazar Nezir Ötegen'in önerisiyle eklendi (2026-11-21): Yenice'de üzerinde kaya mezarı bulunan bir mantar kaya. Mantar kayalar ve peribacaları, alttaki kolay aşınan katmanın üstteki dayanıklı katmana göre daha hızlı aşınmasıyla (farklı aşınma) şekillenir; bu süreçte yağış, kar erimesi, don, akarsu ve rüzgâr birlikte rol oynar. 'Dünyada benzeri yok' ve 'Buzul Çağı'na dayanan oluşum' ifadeleri öneri sahibinindir; bağımsız bir kaynakla henüz doğrulanmadı. Konum ve kaya mezarının tescil durumu bekleniyor.",
+   "aciklama": "Gazeteci-yazar Nezir Ötegen'in önerisiyle eklendi (2026-11-21): Yenice'de üzerinde kaya mezarı bulunan bir mantar kaya. Mantar kayalar ve peribacaları, alttaki kolay aşınan katmanın üstteki dayanıklı katmana göre daha hızlı aşınmasıyla (farklı aşınma) şekillenir; bu süreçte yağış, kar erimesi, don, akarsu ve rüzgâr birlikte rol oynar. 'Dünyada benzeri yok' ve 'Buzul Çağı'na dayanan oluşum' ifadeleri öneri sahibinindir; bağımsız bir kaynakla henüz doğrulanmadı. Yaklaşık bölge (öneren tarafın tarifi, 2026-11-22): Hüseyinli köyü, Yenice köyü, Avlağa mezrası ve Gümüşören Barajı arasında, baraj kıyısında. Kesin koordinat yerinden gönderilecek; gelene kadar haritada işaret yok. Kaya mezarının tescil durumu bekleniyor.",
    "kaynak": [
     {
      "t": "TÜBİTAK Bilim Çocuk — Peribacaları nasıl oluşur?",
@@ -86,7 +86,8 @@
     }
    ],
    "oneren": "Nezir Ötegen (gazeteci-yazar)",
-   "earth": "Yenice, Develi, Kayseri, Türkiye"
+   "earth": "Yenice, Develi, Kayseri, Türkiye",
+   "bolge_tarifi": "Hüseyinli – Yenice – Avlağa mezrası – Gümüşören Barajı arası, baraj kıyısı"
   },
   {
    "id": "deprem-1940",

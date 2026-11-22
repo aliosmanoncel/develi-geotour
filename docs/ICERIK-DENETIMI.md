@@ -48,7 +48,7 @@ Haritada konumu gösterilen nokta sayısı: 16 noktadan 10. Gösterilmeyenler: M
 
 ### Kullanıcıdan beklenen doğrulamalar
 
-1. Mezarlı Mantar Kaya: hangi Yenice; koordinat veya fotoğraf; kaya mezarının tescil durumu (Kayseri Koruma Bölge Kurulu kararı varsa).
+1. Mezarlı Mantar Kaya: Yenice köyü olduğu netleşti (2026-11-22; bölge: Hüseyinli – Yenice – Avlağa mezrası – Gümüşören Barajı kıyısı). Bekleyen: kesin koordinat (yerinden gönderilecek), fotoğraf, kaya mezarının tescil durumu.
 2. 1940 depremi: 20/21 Şubat farkı (çağdaş MTA yazısı ↔ katalog) ve büyüklük (M 5,4 / Ms 5,2 / Mw ≈ 6,7) — AFAD ve KOERI kataloglarının birincil kayıtlarıyla karşılaştırılmalı.
 3. Gereme, Elbiz Parkı, Faraşa ve Tekir Yaylası koordinatları.
 4. MTA 2026 kesitinin genel bir depoda paylaşılması: `fay-yolu-aricilik-veri-bankasi` deposunda tam veri zaten CC BY-NC-SA 4.0 ile yayımlanmış; aynı lisans ve atıf burada da kullanıldı.

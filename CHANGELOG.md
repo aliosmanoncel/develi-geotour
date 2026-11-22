@@ -1,5 +1,9 @@
 # Sürüm notu
 
+## 10.0.3 — 2026-11-22
+
+- Mezarlı Mantar Kaya: yaklaşık bölge tarifi eklendi (Hüseyinli – Yenice – Avlağa – Gümüşören Barajı kıyısı); "hangi Yenice" sorusu yanıtlandı (Yenice köyü). Koordinat bekleniyor, haritada işaret yok.
+
 ## 10.0.2 — 2026-11-22
 
 - Arayüz: haritaya kaydırıldığında üst kısmın yapışkan başlık altında kalması düzeltildi (`scroll-margin-top`). İçerik değişikliği yok.
