@@ -1,5 +1,5 @@
 {
- "surum": "10.1.0",
+ "surum": "10.1.1",
  "guncelleme": "2026-11-22",
  "aciklama": "Kayseri Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
  "konum_durumu": {
@@ -39,7 +39,7 @@
    "ikon": "fa-water"
   },
   "aricilik": {
-   "ad": "Arıcılık",
+   "ad": "Arıcılık (araştırma aşamasında)",
    "renk": "#d4a017",
    "ikon": "fa-seedling"
   }

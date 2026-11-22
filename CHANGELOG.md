@@ -1,5 +1,11 @@
 # Sürüm notu
 
+## 10.1.1 — 2026-11-22
+
+- Başlık sadeleşti: "Kayseri Develi Jeo-Tur | Erciyes–Zamantı Dijital Jeoturizm Atlası" (Seyhan, havza bağlantısı olarak içerikte ve haritada kalır).
+- Arıcılık katmanı "araştırma aşamasında" olarak etiketlendi: 1 nokta tanımlı, haritada 0; tamamlanmış bir harita katmanı değildir.
+- Blog rehber sayfası yayında: https://aliosmanoncel.blogspot.com/p/kayseri-develi-geotour.html
+
 ## 10.1.0 — 2026-11-22
 
 - Yeni katman: **VS30** (USGS Global Vs30 Mosaic, eğim tabanlı yaklaşık; varsayılan kapalı) ve lejantı.
