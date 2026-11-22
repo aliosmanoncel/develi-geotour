@@ -81,6 +81,9 @@
 <div id="map" role="region" aria-label="Harita"></div>
 
 <main>
+  <div class="note" role="note" style="margin-top:0;border-style:solid;border-color:#b7791f">
+    <b>Bilimsel durum:</b> Bu uygulama açık erişimlidir, ancak içeriği doğrulama sürecindedir; yayında olması bilimsel içeriğin nihai olarak onaylandığı anlamına gelmez. Her noktadaki rozet, konumun ve içeriğin doğrulama durumunu gösterir. Düzeltme ve öneriler için blog yorumlarını kullanabilirsiniz.
+  </div>
   <div class="tour" aria-live="polite">
     <b><i class="fa-solid fa-water" style="color:#2980b9"></i> Zamantı Irmağı rehberli tur</b>
     <button class="btn primary" id="tStart"><i class="fa-solid fa-play"></i> Başlat</button>
@@ -95,7 +98,7 @@
   <div id="layers"></div>
 
   <div class="note">
-    <b>Fay katmanı hakkında:</b> Haritadaki fay çizgileri elle çizilmemiştir; MTA 2026 Türkiye Diri Fay Haritası'nın bu bölgeye ait kesitidir ve gösterim için sadeleştirilmiştir (yaklaşık 130 m sapma). Tarihsel depremlerin işaretleri ise dış merkez değil, yaklaşık hasar/yerleşim merkezidir; bir depremin hangi faydan kaynaklandığı, kaynağında açıkça belirtilmedikçe ima edilmez. Mühendislik veya planlama amacıyla özgün MTA verisine başvurun.
+    <b>Fay katmanı hakkında:</b> Haritadaki fay çizgileri elle çizilmemiştir; MTA 2026 Türkiye Diri Fay Haritası'nın bu bölgeye ait kesitidir ve gösterim için sadeleştirilmiştir (özgün çizgiden sapma en fazla 127 m, ortanca 18 m; bu değer özgün haritanın konum doğruluğu değildir). Tarihsel deprem işaretleri yaklaşık yerleşim merkezi ya da belirsizliği yüksek katalog konumudur; bir depremin hangi faydan kaynaklandığı, kaynağında açıkça belirtilmedikçe ima edilmez. Mühendislik veya planlama amacıyla özgün MTA verisine başvurun.
   </div>
   <div class="acts" style="margin-bottom:10px">
     <button class="btn" id="btnKml"><i class="fa-solid fa-earth-europe"></i> KML indir (Google Earth Pro)</button>
@@ -106,7 +109,7 @@
 <footer>
   <p><b>Fay verisi:</b> <span id="faultCite">Elmacı, H. vd., 2026. Türkiye Diri Fay Haritası. MTA, Özel Yayın Serisi-60.</span></p>
   <p><b>Harita altlığı:</b> © OpenStreetMap katkıcıları · © CARTO. <b>Müzik:</b> Pixabay (bağlama enstrümantal), varsayılan olarak kapalı.</p>
-  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.0</span></p>
+  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.1</span></p>
 </footer>
 <div id="toast" role="status"></div>
 

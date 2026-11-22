@@ -1,5 +1,5 @@
 {
- "surum": "10.0.0",
+ "surum": "10.0.1",
  "guncelleme": "2026-11-22",
  "aciklama": "Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
  "konum_durumu": {
@@ -91,23 +91,36 @@
   {
    "id": "deprem-1940",
    "katman": "deprem",
-   "ad": "20 Şubat 1940 Erciyes (Develi) depremi",
-   "lat": 38.3886,
-   "lon": 35.4925,
+   "ad": "1940 Develi (Kayseri) depremi",
+   "lat": 38.4,
+   "lon": 35.3,
    "konum": "yaklasik",
-   "icerik": "kismen",
-   "aciklama": "Dönemin MTA Mecmuası'nda Salomon-Calvi, sarsıntıların 20 Şubat sabahı saat üçe doğru başladığını, 37 kişinin öldüğünü ve en çok zarar gören yerler arasında Soysallı, Develi, Kulpak ve Kızık'ın bulunduğunu yazar. Aletsel kataloglarda büyüklük M 5,4 olarak geçer; Öncel (2025) yeniden değerlendirmesinde Mw ≈ 6,7 önerir. Bazı kaynaklar tarihi 21 Şubat verir; dış merkez belirsiz olduğu için işaret Develi merkezindedir.",
+   "icerik": "bekliyor",
+   "aciklama": "Tarih ve büyüklük kaynaklar arasında çelişkilidir ve doğrulama bekliyor. Tarih: dönemin MTA Mecmuası'nda Salomon-Calvi sarsıntıların 20 Şubat sabahı saat üçe doğru başladığını yazar; AFAD/KOERI kataloglarına dayanan kaynaklar 21 Şubat verir. Büyüklük: ulusal kataloglarda M 5,4 olarak aktarılır, AFAD kataloğu için Ms 5,2 değeri de bildirilir; literatürdeki değerler ölçek türü belirtilmeden 5,1–6,7 arasındadır. Öncel (2025), Bayındırlık Bakanlığı Deprem Araştırma Dairesi raporlarına dayanarak Mw ≈ 6,7 önerir. Kayıp: 37 ölü (Salomon-Calvi; katalog kaynakları). İşaret katalog dış merkezidir (Develi'nin ~17 km batısı); kaynak fay ataması yapılmaz.",
    "kaynak": [
     {
      "t": "Salomon-Calvi, W. — 20 Şubat 1940 tarihinde Erciyes'de vukubulan yer sarsıntısı (MTA Mecmuası)",
      "u": "https://dergi.mta.gov.tr/files/articles/1292/tr/20160129164417_1292_227598b4.pdf"
     },
     {
+     "t": "Vikipedi — 1940 Kayseri depremi (AFAD/KOERI Mw 5,4; 21 Şubat)",
+     "u": "https://tr.wikipedia.org/wiki/1940_Kayseri_depremi"
+    },
+    {
+     "t": "Sismik Uyarı — AFAD kataloğu 21.02.1940 Ms 5,2",
+     "u": "https://www.sismikuyari.com/deprem-riski/kayseri.html"
+    },
+    {
+     "t": "Kayseri Olay — Nezir Ötegen derledi: 6,7 mi, 5,4 mü?",
+     "u": "https://www.kayseriolay.com/nezir-otegen-derledi-1940-develi-depreminin-buyuklugu-6-7-mi-5-4-mu/157156"
+    },
+    {
      "t": "Öncel, A. O. (2025) — Gereme Ancient City and the 1940 Develi Earthquake",
      "u": "https://aliosmanoncel.blogspot.com/2025/06/gerede.html"
     }
    ],
-   "earth": "Develi, Kayseri, Türkiye"
+   "earth": "Develi, Kayseri, Türkiye",
+   "koordinat_kaynagi": "Katalog dış merkezi 38.40 K, 35.30 D (Vikipedi deprem listesi; AFAD/KOERI kaynaklı); aletsel dönem başı, konum belirsizliği yüksek"
   },
   {
    "id": "deprem-1717",
@@ -155,11 +168,11 @@
    "id": "gereme",
    "katman": "tarih",
    "ad": "Gereme antik kenti ve Roma tarım takvimi",
-   "lat": 38.44,
-   "lon": 35.56,
-   "konum": "yaklasik",
+   "lat": null,
+   "lon": null,
+   "konum": "yayimlanmadi",
    "icerik": "kismen",
-   "aciklama": "Erciyes'in güney eteğinde, Develi'nin Zile mahallesi yakınında bir Roma–Doğu Roma yerleşimi. Burada 2013'te tesadüfen bulunan Roma dönemi tarım takvimi, Yazlık (2022) tarafından Ay ve yıldız konumlarına göre zamanlanan biyodinamik bir takvim olarak yorumlanır. 'Dünyadaki tek örnek' ifadesi haber kaynaklarının ve yazarın değerlendirmesidir. Yazlık (2022) yerleşimi Develi'nin 10 km kuzeybatısında, 1.787 m rakımda konumlar; buradaki işaret v9'dan alınmıştır ve bu tanımla çelişir, doğrulanana kadar yaklaşık kabul edilmelidir. 'Spistra' adı tek bir kaynağın iddiasıdır, teyit edilmediği için kullanılmadı.",
+   "aciklama": "Erciyes'in güney eteğinde, Develi'nin Zile mahallesi yakınında bir Roma–Doğu Roma yerleşimi. Burada 2013'te tesadüfen bulunan Roma dönemi tarım takvimi, Yazlık (2022) tarafından Ay ve yıldız konumlarına göre zamanlanan biyodinamik bir takvim olarak yorumlanır. 'Dünyadaki tek örnek' ifadesi haber kaynaklarının ve yazarın değerlendirmesidir. Yazlık (2022) yerleşimi Develi'nin 10 km kuzeybatısında, 1.787 m rakımda konumlar; v9'daki koordinat (38.44 K, 35.56 D) Develi'nin kuzeydoğusunda kaldığı için bu tanımla çelişir; doğrulanana kadar haritada gösterilmiyor. 'Spistra' adı tek bir kaynağın iddiasıdır, teyit edilmediği için kullanılmadı.",
    "kaynak": [
     {
      "t": "Yazlık, B. (2022). Gereme'de bulunan Roma dönemine ait Anadolu'nun ilk biyodinamik tarım takvimi. DOI: 10.30783/nevsosbilen.1124434",
@@ -171,7 +184,7 @@
     }
    ],
    "earth": "Gereme, Develi, Kayseri",
-   "koordinat_kaynagi": "v9 (doğrulanmadı)"
+   "koordinat_kaynagi": "v9 koordinatı Yazlık (2022) tanımıyla çelişti; kaldırıldı"
   },
   {
    "id": "petroglifler",
@@ -223,14 +236,14 @@
    "id": "elbiz",
    "katman": "doga",
    "ad": "Elbiz Parkı",
-   "lat": 38.385,
-   "lon": 35.485,
-   "konum": "yaklasik",
+   "lat": null,
+   "lon": null,
+   "konum": "yayimlanmadi",
    "icerik": "bekliyor",
-   "aciklama": "v9'dan aktarıldı: asırlık çınarlar ve tarihi havuz. Bu bilgi için bağımsız bir kaynak henüz bulunamadı; konum Develi merkezine yakın, yaklaşıktır.",
+   "aciklama": "v9'dan aktarıldı: asırlık çınarlar ve tarihi havuz. Bu bilgi ve konum için bağımsız bir kaynak henüz bulunamadı; doğrulanana kadar haritada gösterilmiyor.",
    "kaynak": [],
    "earth": "Elbiz, Develi, Kayseri",
-   "koordinat_kaynagi": "v9 (doğrulanmadı)"
+   "koordinat_kaynagi": "v9 (doğrulanmadı); kaldırıldı"
   },
   {
    "id": "zamanti-kaynak",
