@@ -46,7 +46,7 @@
   .pt p{margin:6px 0;font-size:13.5px;text-align:justify;hyphens:auto}
   .badges{display:flex;flex-wrap:wrap;gap:5px}
   .badge{font-size:11px;padding:2px 7px;border-radius:10px;border:1px solid currentColor}
-  .b-dogrulandi{color:var(--ok)}.b-kismen,.b-yaklasik{color:var(--warn)}.b-bekliyor,.b-yayimlanmadi{color:var(--bad)}
+  .b-dogrulandi,.b-birincil{color:var(--ok)}.b-kismen,.b-yaklasik,.b-ikincil{color:var(--warn)}.b-bekliyor,.b-yayimlanmadi,.b-yok{color:var(--bad)}
   .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
   .src{font-size:12px;color:var(--muted);margin:6px 0 0;padding-left:18px}
   .src a{color:inherit}
@@ -82,7 +82,7 @@
 
 <main>
   <div class="note" role="note" style="margin-top:0;border-style:solid;border-color:#b7791f">
-    <b>Bilimsel durum:</b> Bu uygulama açık erişimlidir, ancak içeriği doğrulama sürecindedir; yayında olması bilimsel içeriğin nihai olarak onaylandığı anlamına gelmez. Her noktadaki rozet, konumun ve içeriğin doğrulama durumunu gösterir. Düzeltme ve öneriler için blog yorumlarını kullanabilirsiniz.
+    <b>Bilimsel durum:</b> Bu uygulama açık erişimlidir, ancak içeriği doğrulama sürecindedir; yayında olması bilimsel içeriğin nihai olarak onaylandığı anlamına gelmez. Her noktadaki üç rozet konumun, içeriğin ve kaynağın (birincil / ikincil) doğrulama durumunu gösterir. Düzeltme ve öneriler için blog yorumlarını kullanabilirsiniz.
   </div>
   <div class="tour" aria-live="polite">
     <b><i class="fa-solid fa-water" style="color:#2980b9"></i> Zamantı Irmağı rehberli tur</b>
@@ -109,7 +109,7 @@
 <footer>
   <p><b>Fay verisi:</b> <span id="faultCite">Elmacı, H. vd., 2026. Türkiye Diri Fay Haritası. MTA, Özel Yayın Serisi-60.</span></p>
   <p><b>Harita altlığı:</b> © OpenStreetMap katkıcıları · © CARTO. <b>Müzik:</b> Pixabay (bağlama enstrümantal), varsayılan olarak kapalı.</p>
-  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.3</span></p>
+  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.4</span></p>
 </footer>
 <div id="toast" role="status"></div>
 
@@ -120,6 +120,7 @@
 var AKT = {H:'Holosen (son ~11.700 yıl)', K:'Kuvaterner (son ~2,58 milyon yıl)', OK:'Olası Kuvaterner', DYK:'Deprem yüzey kırığı (tarihsel/aletsel)'};
 var KAY = {SoD:'sol yanal doğrultu atımlı', SaD:'sağ yanal doğrultu atımlı', N:'normal', T:'ters / bindirme', 'AÇ':'açılma'};
 var DUR = {dogrulandi:'doğrulandı', kismen:'kısmen doğrulandı', bekliyor:'doğrulama bekliyor', yaklasik:'yaklaşık konum', yayimlanmadi:'konum yok'};
+var KD = {birincil:'birincil kaynak', ikincil:'ikincil kaynak', yok:'kaynak yok'};
 
 var map, data, ptLayers = {}, markers = {}, faultStrong, faultWeak, userMk, activeFilter = 'all';
 var tour = {on:false, i:-1, stops:[]};
@@ -201,14 +202,14 @@ function pinIcon(kat, approx){
 }
 
 function popupFor(n){
-  var h = '<b>' + esc(n.ad) + '</b><br><small>' + esc(DUR[n.konum]) + ' · ' + esc(DUR[n.icerik]) + '</small><br>' +
+  var h = '<b>' + esc(n.ad) + '</b><br><small>Konum: ' + esc(DUR[n.konum]) + ' · İçerik: ' + esc(DUR[n.icerik]) + ' · ' + esc(KD[n.kaynak_duzeyi]) + '</small><br>' +
     esc(n.aciklama.length > 260 ? n.aciklama.slice(0, 257) + '…' : n.aciklama) +
     '<br><a href="#' + encodeURIComponent(n.id) + '">Ayrıntı ve kaynaklar ↓</a> · <a target="_blank" rel="noopener" href="' + earthUrl(n.earth || n.ad) + '">Google Earth</a>';
   return h;
 }
 
 /* ---------- LIST ---------- */
-function badge(code){ return el('span', {'class':'badge b-' + code, text:DUR[code]}); }
+function badge(code, prefix){ return el('span', {'class':'badge b-' + code, text:(prefix ? prefix + ': ' : '') + (DUR[code] || KD[code])}); }
 
 function renderList(){
   var box = $('layers'); box.innerHTML = '';
@@ -230,7 +231,7 @@ function renderList(){
 function pointCard(n){
   var card = el('article', {'class':'pt', id:'pt-' + n.id, 'data-s':(n.ad + ' ' + n.aciklama).toLocaleLowerCase('tr')});
   card.appendChild(el('h3', {text:n.ad}));
-  card.appendChild(el('div', {'class':'badges'}, [badge(n.konum), badge(n.icerik), n.oneren ? el('span', {'class':'badge', text:'Öneren: ' + n.oneren}) : null]));
+  card.appendChild(el('div', {'class':'badges'}, [badge(n.konum, 'Konum'), badge(n.icerik, 'İçerik'), badge(n.kaynak_duzeyi, 'Kaynak'), n.oneren ? el('span', {'class':'badge', text:'Öneren: ' + n.oneren}) : null]));
   card.appendChild(el('p', {text:n.aciklama}));
   var acts = el('div', {'class':'acts'});
   if (n.lat != null) acts.appendChild(el('button', {'class':'btn', onclick:function(){ focusPoint(n.id, true); }}, [el('i', {'class':'fa-solid fa-location-dot'}), 'Haritada göster']));
@@ -239,7 +240,7 @@ function pointCard(n){
   card.appendChild(acts);
   if (n.kaynak && n.kaynak.length){
     var ul = el('ul', {'class':'src'});
-    n.kaynak.forEach(function(s){ ul.appendChild(el('li', null, [el('a', {href:s.u, target:'_blank', rel:'noopener', text:s.t})])); });
+    n.kaynak.forEach(function(s){ ul.appendChild(el('li', null, [el('a', {href:s.u, target:'_blank', rel:'noopener', text:s.t}), s.tur ? ' [' + s.tur + ']' : ''])); });
     card.appendChild(ul);
   } else {
     card.appendChild(el('p', {'class':'src', style:'padding:0', text:'Kaynak: henüz yok.'}));

@@ -1,5 +1,9 @@
 # Sürüm notu
 
+## 10.0.4 — 2026-11-22
+
+- Üçüncü doğrulama boyutu: **kaynak güvenilirliği** (birincil / ikincil / yok). Her nokta ve her kaynak etiketlendi; uygulamada üçüncü rozet. Dağılım: 5 birincil, 9 ikincil, 2 kaynaksız.
+
 ## 10.0.3 — 2026-11-22
 
 - Mezarlı Mantar Kaya: yaklaşık bölge tarifi eklendi (Hüseyinli – Yenice – Avlağa – Gümüşören Barajı kıyısı); "hangi Yenice" sorusu yanıtlandı (Yenice köyü). Koordinat bekleniyor, haritada işaret yok.
