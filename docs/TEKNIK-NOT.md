@@ -46,3 +46,19 @@ Bu kesit görselleştirme ve eğitim içindir; parsel, yapı veya planlama karar
 ## 6. Yeniden üretim
 
 Kırpma ve sadeleştirme, Python standart kitaplığıyla (json, math) yapıldı; harici GIS paketi kullanılmadı. Aynı girdi ve parametrelerle aynı çıktı elde edilir.
+
+## 7. VS30 katmanı (v10.1.0)
+
+**Kaynak:** USGS Global Vs30 Mosaic (U.S. Geological Survey, 2025; https://doi.org/10.5066/P1NV6UNM). Bu bölgede değerler Wald ve Allen (2007) topoğrafik eğim yöntemine dayanır. Kesit, USGS Vs30 Map Viewer üzerinden 2026-11-22'de kullanıcı tarafından alındı (ArcGIS "VS30_extract" aracı).
+
+**Dosyalar:** `data/vs30-usgs-kayseri.tif` (+ `.tfw`, özgün kesit), `data/vs30-usgs-kayseri.png` (gösterim).
+
+**Izgara:** 410 × 207 piksel, 0,0083333° (30 açı saniyesi, ~0,83 km), WGS84. Kenar sınırları: B 33,929167 · D 37,345833 · G 37,720833 · K 39,445833. Değer aralığı 180–900 m/s (eğim yönteminin tipik sınırları).
+
+**Nokta değeri:** Noktayı içeren piksel değeridir; `min3x3`–`max3x3` komşu dokuz pikselin aralığıdır ve 0,83 km'lik çözünürlükteki konum duyarlılığını gösterir. Göksu birleşme noktası (37,61 K) kesitin dışındadır.
+
+**Gösterim:** 8 aralık (Allen & Wald, 2007, OFR 2007-1357 lejant aralıkları): <180, 180–240, 240–300, 300–360, 360–490, 490–620, 620–760, >760 m/s; saydamlık %25.
+
+**Yaklaşık TBDY 2018 karşılığı:** Yalnız VS30 eşiklerine göre (Tablo 16.1): ZA >1500, ZB 760–1500, ZC 360–760, ZD 180–360, ZE <180 m/s. TBDY'de yerel zemin sınıfı saha etüdüyle (VS30, (N60)30, (cu)30 ve zemin cinsi) belirlenir; buradaki karşılık bir **yaklaşım**dır, zemin sınıfı değildir.
+
+**Sınırlılık:** Eğim tabanlı VS30, düz havzalarda (ör. Sultan Sazlığı) ve volkanik platolarda büyük sapma gösterebilir. Ölçülmüş bir zemin verisi değildir; mühendislik, parsel veya yapı kararında kullanılmaz.

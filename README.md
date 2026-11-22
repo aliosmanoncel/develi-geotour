@@ -25,6 +25,7 @@ Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar, tarihsel depr
 index.html                         Uygulama (Leaflet 1.9.4, SRI)
 data/points.json                   16 nokta, kaynak ve doğrulama durumu
 data/faults-mta2026-develi.geojson 608 fay objesi (MTA 2026 kesiti)
+data/vs30-usgs-kayseri.tif/.png    VS30 kesiti (USGS, eğim tabanlı yaklaşık)
 docs/MIMARI-DEGERLENDIRME.md       kafz-geowalk ve bal-yolu-harita karşılaştırması
 docs/ICERIK-DENETIMI.md            v9 → v10 iddia denetimi
 docs/TEKNIK-NOT.md                 Fay kesiti üretimi ve sadeleştirme sapması
@@ -46,6 +47,8 @@ Elmacı, H., Kürçer, A., Özalp, S., Altuntaş, G., Avcı, H.O., Aydoğan, H.,
 - **Özgün veriye erişim:** MTA yayınları ve AFAD'ın Türkiye Diri Fay Haritası sorgu sistemi.
 
 Fay kesiti, [`fay-yolu-aricilik-veri-bankasi`](https://github.com/aliosmanoncel/fay-yolu-aricilik-veri-bankasi) deposundaki `data/turkiye_diri_fay.geojson` dosyasından türetilmiştir. Mühendislik veya planlama amacıyla özgün MTA verisine başvurun.
+
+**VS30:** U.S. Geological Survey (2025). *The U.S. Geological Survey Global Vs30 Mosaic.* https://doi.org/10.5066/P1NV6UNM (kamu malı). Yöntem: Wald, D. J., & Allen, T. I. (2007). Topographic slope as a proxy for seismic site conditions and amplification. *BSSA, 97*(5), 1379–1395. https://doi.org/10.1785/0120060267. Eğim tabanlı yaklaşık değerdir; ölçülmüş zemin verisi değildir (bkz. `docs/TEKNIK-NOT.md` §7).
 
 Nokta kaynakları `data/points.json` içinde her noktanın `kaynak` alanındadır.
 

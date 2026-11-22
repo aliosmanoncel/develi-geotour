@@ -60,6 +60,10 @@
   .legend{background:var(--panel);color:var(--text);padding:8px 10px;border-radius:8px;font-size:11.5px;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,.3);max-width:220px}
   .legend .sw{display:inline-block;width:22px;height:0;border-top:3px solid;vertical-align:middle;margin-right:6px}
   .leaflet-popup-content{font-size:13px;line-height:1.5}
+  .vs30-img{image-rendering:pixelated;image-rendering:crisp-edges}
+  .vs30line{font-size:12.5px;margin:4px 0 0;color:var(--muted)}
+  .legend .sq{display:inline-block;width:12px;height:10px;margin-right:5px;vertical-align:middle}
+  #vs30leg{display:none;margin-top:6px;border-top:1px solid var(--border);padding-top:4px}
   #toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#1f2a37;color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .3s;z-index:2000;pointer-events:none}
   #toast.on{opacity:1}
   @media (max-width:600px){#map{height:46vh}h1 small{display:none}.legend{font-size:10px;max-width:150px;padding:5px 7px;opacity:.92}.legend small{display:none}}
@@ -98,7 +102,7 @@
   <div id="layers"></div>
 
   <div class="note">
-    <b>Fay katmanı hakkında:</b> Haritadaki fay çizgileri elle çizilmemiştir; MTA 2026 Türkiye Diri Fay Haritası'nın bu bölgeye ait kesitidir ve gösterim için sadeleştirilmiştir (özgün çizgiden sapma en fazla 127 m, ortanca 18 m; bu değer özgün haritanın konum doğruluğu değildir). Tarihsel deprem işaretleri yaklaşık yerleşim merkezi ya da belirsizliği yüksek katalog konumudur; bir depremin hangi faydan kaynaklandığı, kaynağında açıkça belirtilmedikçe ima edilmez. Mühendislik veya planlama amacıyla özgün MTA verisine başvurun.
+    <b>Fay katmanı hakkında:</b> Haritadaki fay çizgileri elle çizilmemiştir; MTA 2026 Türkiye Diri Fay Haritası'nın bu bölgeye ait kesitidir ve gösterim için sadeleştirilmiştir (özgün çizgiden sapma en fazla 127 m, ortanca 18 m; bu değer özgün haritanın konum doğruluğu değildir). VS30 katmanı (varsayılan kapalı) USGS Global Vs30 Mozaiği'nden alınmış, topoğrafik eğime dayalı yaklaşık bir değerdir; ölçülmüş zemin verisi değildir ve yerel zemin sınıfının yerine geçmez. Tarihsel deprem işaretleri yaklaşık yerleşim merkezi ya da belirsizliği yüksek katalog konumudur; bir depremin hangi faydan kaynaklandığı, kaynağında açıkça belirtilmedikçe ima edilmez. Mühendislik veya planlama amacıyla özgün MTA verisine başvurun.
   </div>
   <div class="acts" style="margin-bottom:10px">
     <button class="btn" id="btnKml"><i class="fa-solid fa-earth-europe"></i> KML indir (Google Earth Pro)</button>
@@ -109,7 +113,7 @@
 <footer>
   <p><b>Fay verisi:</b> <span id="faultCite">Elmacı, H. vd., 2026. Türkiye Diri Fay Haritası. MTA, Özel Yayın Serisi-60.</span></p>
   <p><b>Harita altlığı:</b> © OpenStreetMap katkıcıları · © CARTO. <b>Müzik:</b> Pixabay (bağlama enstrümantal), varsayılan olarak kapalı.</p>
-  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.5</span></p>
+  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.1.0</span></p>
 </footer>
 <div id="toast" role="status"></div>
 
@@ -124,6 +128,7 @@ var KD = {birincil:'birincil kaynak', ikincil:'ikincil kaynak', yok:'kaynak yok'
 
 var map, data, ptLayers = {}, markers = {}, faultStrong, faultWeak, userMk, activeFilter = 'all';
 var tour = {on:false, i:-1, stops:[]};
+var VS30BINS = [['< 180','#7a0177'],['180–240','#c51b8a'],['240–300','#f768a1'],['300–360','#fdae61'],['360–490','#fee08b'],['490–620','#abdda4'],['620–760','#66c2a5'],['> 760','#3288bd']];
 var audio = null;
 var MUSIC = 'https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3?filename=turkish-long-neck-lute-baglama-110636.mp3';
 
@@ -161,7 +166,8 @@ function initMap(){
       '<span class="sw" style="border-color:#e11d48"></span>Deprem yüzey kırığı<br>' +
       '<span class="sw" style="border-color:#f97316"></span>Holosen<br>' +
       '<span class="sw" style="border-color:#94a3b8;border-top-style:dashed"></span>Kuvaterner / olası<br>' +
-      '<small>Kesikli kenarlı işaret = yaklaşık konum</small>';
+      '<small>Kesikli kenarlı işaret = yaklaşık konum</small>' +
+      '<div id="vs30leg"><b>VS30 (m/s) · USGS, eğim tabanlı yaklaşık</b><br>' + VS30BINS.map(function(b){ return '<span class="sq" style="background:' + b[1] + '"></span>' + b[0]; }).join('<br>') + '</div>';
     return d;
   };
   legend.addTo(map);
@@ -233,6 +239,11 @@ function pointCard(n){
   card.appendChild(el('h3', {text:n.ad}));
   card.appendChild(el('div', {'class':'badges'}, [badge(n.konum, 'Konum'), badge(n.icerik, 'İçerik'), badge(n.kaynak_duzeyi, 'Kaynak'), n.oneren ? el('span', {'class':'badge', text:'Öneren: ' + n.oneren}) : null]));
   card.appendChild(el('p', {text:n.aciklama}));
+  if (n.vs30){
+    card.appendChild(el('p', {'class':'vs30line', text: n.vs30.deger != null ?
+      'VS30 ≈ ' + n.vs30.deger + ' m/s (komşu pikseller ' + n.vs30.min3x3 + '–' + n.vs30.max3x3 + ') · yaklaşık TBDY 2018 karşılığı: ' + n.vs30.tbdy + ' · USGS eğim tabanlı vekil, saha ölçümü değildir' :
+      'VS30: nokta, alınan VS30 kesitinin dışında.'}));
+  }
   var acts = el('div', {'class':'acts'});
   if (n.lat != null) acts.appendChild(el('button', {'class':'btn', onclick:function(){ focusPoint(n.id, true); }}, [el('i', {'class':'fa-solid fa-location-dot'}), 'Haritada göster']));
   acts.appendChild(el('a', {'class':'btn', href:earthUrl(n.earth || n.ad), target:'_blank', rel:'noopener'}, [el('i', {'class':'fa-solid fa-globe'}), 'Google Earth']));
@@ -380,6 +391,13 @@ function build(points, faults){
     g.addTo(map); ptLayers[kat] = g;
     overlays['<span style="color:' + data.katmanlar[kat].renk + '">●</span> ' + data.katmanlar[kat].ad] = g;
   });
+  if (data.vs30_kaynak){
+    var k = data.vs30_kaynak.kapsam;
+    var vs = L.imageOverlay('data/vs30-usgs-kayseri.png', [[k[1], k[0]], [k[3], k[2]]], {opacity:.75, className:'vs30-img', attribution:'VS30: USGS Global Vs30 Mosaic'});
+    overlays['VS30 — USGS, eğim tabanlı yaklaşık'] = vs;
+    map.on('overlayadd', function(ev){ if (ev.layer === vs){ $('vs30leg').style.display = 'block'; vs.bringToBack(); } });
+    map.on('overlayremove', function(ev){ if (ev.layer === vs) $('vs30leg').style.display = 'none'; });
+  }
   L.control.layers({'Açık altlık':map._bases.light, 'Koyu altlık':map._bases.dark}, overlays, {collapsed:true}).addTo(map);
   renderList();
   if (location.hash.length > 1) setTimeout(function(){ focusPoint(decodeURIComponent(location.hash.slice(1)), false); }, 400);

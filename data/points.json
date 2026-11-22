@@ -1,5 +1,5 @@
 {
- "surum": "10.0.5",
+ "surum": "10.1.0",
  "guncelleme": "2026-11-22",
  "aciklama": "Kayseri Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
  "konum_durumu": {
@@ -67,7 +67,13 @@
     }
    ],
    "earth": "Erciyes Dağı, Kayseri, Türkiye",
-   "kaynak_duzeyi": "birincil"
+   "kaynak_duzeyi": "birincil",
+   "vs30": {
+    "deger": 784,
+    "min3x3": 766,
+    "max3x3": 900,
+    "tbdy": "ZB"
+   }
   },
   {
    "id": "mantar-kaya-yenice",
@@ -133,7 +139,13 @@
    ],
    "earth": "Develi, Kayseri, Türkiye",
    "koordinat_kaynagi": "Katalog dış merkezi 38.40 K, 35.30 D (Vikipedi deprem listesi; AFAD/KOERI kaynaklı); aletsel dönem başı, konum belirsizliği yüksek",
-   "kaynak_duzeyi": "birincil"
+   "kaynak_duzeyi": "birincil",
+   "vs30": {
+    "deger": 189,
+    "min3x3": 188,
+    "max3x3": 235,
+    "tbdy": "ZD"
+   }
   },
   {
    "id": "deprem-1717",
@@ -152,7 +164,13 @@
     }
    ],
    "earth": "Kayseri, Türkiye",
-   "kaynak_duzeyi": "ikincil"
+   "kaynak_duzeyi": "ikincil",
+   "vs30": {
+    "deger": 240,
+    "min3x3": 236,
+    "max3x3": 289,
+    "tbdy": "ZD"
+   }
   },
   {
    "id": "fraktin",
@@ -181,7 +199,13 @@
     }
    ],
    "earth": "Fıraktın Kaya Anıtı, Develi, Kayseri",
-   "kaynak_duzeyi": "ikincil"
+   "kaynak_duzeyi": "ikincil",
+   "vs30": {
+    "deger": 270,
+    "min3x3": 215,
+    "max3x3": 319,
+    "tbdy": "ZD"
+   }
   },
   {
    "id": "gereme",
@@ -259,7 +283,13 @@
     }
    ],
    "earth": "Sultan Sazlığı Milli Parkı, Kayseri",
-   "kaynak_duzeyi": "ikincil"
+   "kaynak_duzeyi": "ikincil",
+   "vs30": {
+    "deger": 229,
+    "min3x3": 212,
+    "max3x3": 234,
+    "tbdy": "ZD"
+   }
   },
   {
    "id": "elbiz",
@@ -303,7 +333,13 @@
     }
    ],
    "earth": "Şerefiye, Pınarbaşı, Kayseri",
-   "kaynak_duzeyi": "birincil"
+   "kaynak_duzeyi": "birincil",
+   "vs30": {
+    "deger": 341,
+    "min3x3": 309,
+    "max3x3": 404,
+    "tbdy": "ZD"
+   }
   },
   {
    "id": "zamanti-pinarbasi",
@@ -328,7 +364,13 @@
     }
    ],
    "earth": "Pınarbaşı, Kayseri, Türkiye",
-   "kaynak_duzeyi": "birincil"
+   "kaynak_duzeyi": "birincil",
+   "vs30": {
+    "deger": 411,
+    "min3x3": 245,
+    "max3x3": 784,
+    "tbdy": "ZC"
+   }
   },
   {
    "id": "zamanti-yahyali",
@@ -353,7 +395,13 @@
     }
    ],
    "earth": "Yahyalı, Kayseri, Türkiye",
-   "kaynak_duzeyi": "ikincil"
+   "kaynak_duzeyi": "ikincil",
+   "vs30": {
+    "deger": 519,
+    "min3x3": 311,
+    "max3x3": 900,
+    "tbdy": "ZC"
+   }
   },
   {
    "id": "zamanti-farasa",
@@ -408,7 +456,13 @@
     }
    ],
    "earth": "Kapuzbaşı Şelalesi, Yahyalı, Kayseri",
-   "kaynak_duzeyi": "ikincil"
+   "kaynak_duzeyi": "ikincil",
+   "vs30": {
+    "deger": 523,
+    "min3x3": 523,
+    "max3x3": 900,
+    "tbdy": "ZC"
+   }
   },
   {
    "id": "zamanti-goksu",
@@ -433,7 +487,10 @@
     }
    ],
    "earth": "Aladağ, Adana, Türkiye",
-   "kaynak_duzeyi": "ikincil"
+   "kaynak_duzeyi": "ikincil",
+   "vs30": {
+    "kapsam": "disinda"
+   }
   },
   {
    "id": "erciyes-aricilik",
@@ -464,5 +521,18 @@
   "birincil": "Noktanın ana bilgisi hakemli bir yayına, resmî kurum verisine veya olayla çağdaş bir belgeye dayanıyor.",
   "ikincil": "Ana bilgi haber, ansiklopedi, tanıtım veya derleme kaynaklarına dayanıyor; birincil kaynağa ulaşılması gerekiyor.",
   "yok": "Noktaya özgü bilgiyi destekleyen bir kaynak henüz yok."
+ },
+ "vs30_kaynak": {
+  "ad": "USGS Global Vs30 Mosaic (eğim tabanlı vekil; Wald & Allen 2007)",
+  "doi": "https://doi.org/10.5066/P1NV6UNM",
+  "alinis": "USGS Vs30 Map Viewer, 2026-11-22, kullanıcı kesiti",
+  "cozunurluk": "30 açı saniyesi (~0,83 km)",
+  "kapsam": [
+   33.929167,
+   37.720833,
+   37.345833,
+   39.445833
+  ],
+  "not": "Değer noktayı içeren pikselden alınır; 3x3 aralığı komşu piksellerdir. Yaklaşık TBDY 2018 karşılığı yalnız VS30 eşiklerine göredir; yerel zemin sınıfı saha etüdüyle belirlenir."
  }
 }

@@ -1,5 +1,11 @@
 # Sürüm notu
 
+## 10.1.0 — 2026-11-22
+
+- Yeni katman: **VS30** (USGS Global Vs30 Mosaic, eğim tabanlı yaklaşık; varsayılan kapalı) ve lejantı.
+- Her noktada VS30 değeri, komşu piksel aralığı ve yaklaşık TBDY 2018 karşılığı. Göksu birleşmesi kesit dışında.
+- `docs/TEKNIK-NOT.md` §7: kaynak, ızgara, sınıflama ve sınırlılıklar.
+
 ## 10.0.5 — 2026-11-22
 
 - Proje adı **Kayseri Develi Jeo-Tur**; depo `kayseri-develi-geotour`. Yeni canlı adres: https://aliosmanoncel.github.io/kayseri-develi-geotour/
