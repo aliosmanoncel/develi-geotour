@@ -6,6 +6,7 @@
 - 1940 depremi: tarih (20/21 Şubat) ve büyüklük (M 5,4 / Ms 5,2 / Mw ≈ 6,7) "doğrulama bekliyor"; işaret katalog dış merkezine (38,40 K 35,30 D) taşındı.
 - Gereme ve Elbiz Parkı koordinatları haritadan kaldırıldı (v9 kaynaklı, doğrulanmamış). Haritada 10/16 nokta.
 - README: MTA verisinin kullanım ve dağıtım koşulları.
+- Yayın: GitHub Pages `main` /(root) dalından; özel Actions iş akışı (deploy-pages@v4 artifact hatası) kaldırıldı.
 - `docs/TEKNIK-NOT.md`: kesit üretimi ve sapma ölçümü (en fazla 127 m, ortanca 18 m; mutlak doğruluk değildir).
 
 ## 10.0.0 — 2026-11-22

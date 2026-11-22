@@ -4,7 +4,7 @@
 
 Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar, tarihsel depremler, arkeoloji, doğa ve arıcılık katmanlarını **kaynaklarıyla** gösteren etkileşimli harita.
 
-**Canlı:** `https://aliosmanoncel.github.io/develi-geotour/` (GitHub Pages; yayımlanınca etkin)
+**Canlı:** `https://aliosmanoncel.github.io/develi-geotour/` (GitHub Pages, `main` dalı kökünden yayımlanır)
 **Blog:** [Develi Dijital Rehberi (2025)](https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html)
 
 ## İlke
@@ -26,7 +26,7 @@ docs/TEKNIK-NOT.md                 Fay kesiti üretimi ve sadeleştirme sapması
 CHANGELOG.md
 ```
 
-Yerelde çalıştırma: `python -m http.server` (veri `fetch` ile yüklendiği için dosyayı doğrudan açmak çalışmaz).
+Yayın: GitHub Pages, kaynak `main` /(root); `.nojekyll` ile dosyalar işlenmeden sunulur. Yerelde çalıştırma: `python -m http.server` (veri `fetch` ile yüklendiği için dosyayı doğrudan açmak çalışmaz).
 
 ## Veri kaynağı ve atıf
 
