@@ -1,0 +1,397 @@
+{
+ "surum": "10.0.0",
+ "guncelleme": "2026-11-22",
+ "aciklama": "Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
+ "konum_durumu": {
+  "dogrulandi": "Koordinat bağımsız bir kaynaktan alındı (kaynak alanında belirtilir).",
+  "yaklasik": "Koordinat yerleşim veya alan merkezidir; noktanın kendisi değildir.",
+  "yayimlanmadi": "Konum yayımlanmamış ya da doğrulanamadı; haritada işaret yok, yalnız listede."
+ },
+ "icerik_durumu": {
+  "dogrulandi": "Metindeki iddialar kaynaklarla doğrulandı.",
+  "kismen": "Temel bilgi doğrulandı; bazı ayrıntılar tartışmalı veya kaynaklar arasında farklı.",
+  "bekliyor": "Öneri olarak eklendi; bağımsız kaynakla henüz doğrulanmadı."
+ },
+ "katmanlar": {
+  "jeoloji": {
+   "ad": "Jeoloji ve jeositler",
+   "renk": "#b45309",
+   "ikon": "fa-mountain"
+  },
+  "deprem": {
+   "ad": "Tarihsel depremler",
+   "renk": "#c0392b",
+   "ikon": "fa-house-crack"
+  },
+  "tarih": {
+   "ad": "Tarih ve arkeoloji",
+   "renk": "#8e44ad",
+   "ikon": "fa-landmark"
+  },
+  "doga": {
+   "ad": "Doğa",
+   "renk": "#27ae60",
+   "ikon": "fa-tree"
+  },
+  "zamanti": {
+   "ad": "Zamantı Irmağı rotası",
+   "renk": "#2980b9",
+   "ikon": "fa-water"
+  },
+  "aricilik": {
+   "ad": "Arıcılık",
+   "renk": "#d4a017",
+   "ikon": "fa-seedling"
+  }
+ },
+ "noktalar": [
+  {
+   "id": "erciyes",
+   "katman": "jeoloji",
+   "ad": "Erciyes Volkanı",
+   "lat": 38.531,
+   "lon": 35.447,
+   "konum": "dogrulandi",
+   "icerik": "kismen",
+   "aciklama": "Kapadokya Volkanik Bölgesi'nin en yüksek stratovolkanı. Zirve yüksekliği kaynaklara göre farklı verilir: MTA TURKVOLC 3864 m, yaygın kaynaklar 3916–3917 m. Develi Ovası ve Sultan Sazlığı havzası volkanın güney eteğindedir.",
+   "kaynak": [
+    {
+     "t": "MTA TURKVOLC — Erciyes Dağı",
+     "u": "https://mta.gov.tr/turkvolc/en/erciyes"
+    },
+    {
+     "t": "Yerbilimleri Dergisi — Erciyes buzul morfolojisi (3917 m)",
+     "u": "https://dergipark.org.tr/en/download/article-file/145530"
+    }
+   ],
+   "earth": "Erciyes Dağı, Kayseri, Türkiye"
+  },
+  {
+   "id": "mantar-kaya-yenice",
+   "katman": "jeoloji",
+   "ad": "Mezarlı Mantar Kaya (Yenice, Develi)",
+   "lat": null,
+   "lon": null,
+   "konum": "yayimlanmadi",
+   "icerik": "bekliyor",
+   "aciklama": "Gazeteci-yazar Nezir Ötegen'in önerisiyle eklendi (2026-11-21): Yenice'de üzerinde kaya mezarı bulunan bir mantar kaya. Mantar kayalar ve peribacaları, alttaki kolay aşınan katmanın üstteki dayanıklı katmana göre daha hızlı aşınmasıyla (farklı aşınma) şekillenir; bu süreçte yağış, kar erimesi, don, akarsu ve rüzgâr birlikte rol oynar. 'Dünyada benzeri yok' ve 'Buzul Çağı'na dayanan oluşum' ifadeleri öneri sahibinindir; bağımsız bir kaynakla henüz doğrulanmadı. Konum ve kaya mezarının tescil durumu bekleniyor.",
+   "kaynak": [
+    {
+     "t": "TÜBİTAK Bilim Çocuk — Peribacaları nasıl oluşur?",
+     "u": "https://bilimcocuk.tubitak.gov.tr/wp-content/uploads/sites/157/2025/09/0727b1d1-bdd2-4fc6-929f-3fcc3ba1b2ab.pdf"
+    },
+    {
+     "t": "Sayın & Toprak — Kapadokya ignimbritlerinde peribacası gelişimi (JMO)",
+     "u": "https://www.jmo.org.tr/resimler/ekler/e6695f88e663001_ek.doc"
+    }
+   ],
+   "oneren": "Nezir Ötegen (gazeteci-yazar)",
+   "earth": "Yenice, Develi, Kayseri, Türkiye"
+  },
+  {
+   "id": "deprem-1940",
+   "katman": "deprem",
+   "ad": "20 Şubat 1940 Erciyes (Develi) depremi",
+   "lat": 38.3886,
+   "lon": 35.4925,
+   "konum": "yaklasik",
+   "icerik": "kismen",
+   "aciklama": "Dönemin MTA Mecmuası'nda Salomon-Calvi, sarsıntıların 20 Şubat sabahı saat üçe doğru başladığını, 37 kişinin öldüğünü ve en çok zarar gören yerler arasında Soysallı, Develi, Kulpak ve Kızık'ın bulunduğunu yazar. Aletsel kataloglarda büyüklük M 5,4 olarak geçer; Öncel (2025) yeniden değerlendirmesinde Mw ≈ 6,7 önerir. Bazı kaynaklar tarihi 21 Şubat verir; dış merkez belirsiz olduğu için işaret Develi merkezindedir.",
+   "kaynak": [
+    {
+     "t": "Salomon-Calvi, W. — 20 Şubat 1940 tarihinde Erciyes'de vukubulan yer sarsıntısı (MTA Mecmuası)",
+     "u": "https://dergi.mta.gov.tr/files/articles/1292/tr/20160129164417_1292_227598b4.pdf"
+    },
+    {
+     "t": "Öncel, A. O. (2025) — Gereme Ancient City and the 1940 Develi Earthquake",
+     "u": "https://aliosmanoncel.blogspot.com/2025/06/gerede.html"
+    }
+   ],
+   "earth": "Develi, Kayseri, Türkiye"
+  },
+  {
+   "id": "deprem-1717",
+   "katman": "deprem",
+   "ad": "1717 Kayseri depremi",
+   "lat": 38.7225,
+   "lon": 35.4875,
+   "konum": "yaklasik",
+   "icerik": "kismen",
+   "aciklama": "Kayseri'nin tarihsel deprem kaydında öne çıkan iki olaydan biri (diğeri 1835). Can kaybına ilişkin tarihsel kaynaklarda farklı rakamlar vardır. Kaynak fayı ve büyüklüğü bilinmiyor: Akyüz'e göre 1717 ve 1835 depremlerinin faylar üzerindeki etkisi henüz tam bilinmiyor. v9'daki 'Ecemiş Fayı üzerinde 7,4' ifadesi bu nedenle kaldırıldı. İşaret Kayseri kent merkezindedir.",
+   "kaynak": [
+    {
+     "t": "Milli Gazete — TMMOB Kayseri Deprem Paneli, Prof. Dr. H. S. Akyüz",
+     "u": "https://www.milligazete.com.tr/kayseri-deprem-riski-2026-hangi-fay-hatlari-geciyor-buyuk-deprem-olur-mu-uzman-ne-acikladi"
+    }
+   ],
+   "earth": "Kayseri, Türkiye"
+  },
+  {
+   "id": "fraktin",
+   "katman": "tarih",
+   "ad": "Fıraktın Hitit Kaya Anıtı",
+   "lat": 38.2717,
+   "lon": 35.6317,
+   "konum": "dogrulandi",
+   "icerik": "dogrulandi",
+   "aciklama": "MÖ 13. yüzyıl ortasına tarihlenen Hitit kaya kabartması. Luvi hiyeroglifli etiketler Büyük Kral III. Hattuşili'yi ve Büyük Kraliçe Puduhepa'yı tanımlar; ortadaki sahnede Puduhepa güneş tanrıçası Hebat'a sunu yapar. Anıt, Zamantı'nın bir kolu olan Enzel Dere kıyısındadır; bu yüzden tarih katmanını Zamantı havzasına bağlar.",
+   "kaynak": [
+    {
+     "t": "Vici.org — Fraktin (Fıraktın) Relief",
+     "u": "https://vici.org/vici/20650/"
+    },
+    {
+     "t": "Hittite Monuments — Fraktin Relief",
+     "u": "https://hittitemonuments.com/fraktin/"
+    },
+    {
+     "t": "Wikipedia — Fıraktın relief",
+     "u": "https://en.wikipedia.org/wiki/F%C4%B1rakt%C4%B1n_relief"
+    }
+   ],
+   "earth": "Fıraktın Kaya Anıtı, Develi, Kayseri"
+  },
+  {
+   "id": "gereme",
+   "katman": "tarih",
+   "ad": "Gereme antik kenti ve Roma tarım takvimi",
+   "lat": 38.44,
+   "lon": 35.56,
+   "konum": "yaklasik",
+   "icerik": "kismen",
+   "aciklama": "Erciyes'in güney eteğinde, Develi'nin Zile mahallesi yakınında bir Roma–Doğu Roma yerleşimi. Burada 2013'te tesadüfen bulunan Roma dönemi tarım takvimi, Yazlık (2022) tarafından Ay ve yıldız konumlarına göre zamanlanan biyodinamik bir takvim olarak yorumlanır. 'Dünyadaki tek örnek' ifadesi haber kaynaklarının ve yazarın değerlendirmesidir. Yazlık (2022) yerleşimi Develi'nin 10 km kuzeybatısında, 1.787 m rakımda konumlar; buradaki işaret v9'dan alınmıştır ve bu tanımla çelişir, doğrulanana kadar yaklaşık kabul edilmelidir. 'Spistra' adı tek bir kaynağın iddiasıdır, teyit edilmediği için kullanılmadı.",
+   "kaynak": [
+    {
+     "t": "Yazlık, B. (2022). Gereme'de bulunan Roma dönemine ait Anadolu'nun ilk biyodinamik tarım takvimi. DOI: 10.30783/nevsosbilen.1124434",
+     "u": "https://doi.org/10.30783/nevsosbilen.1124434"
+    },
+    {
+     "t": "Anatolian Archaeology — Roman-era agricultural calendar, Develi",
+     "u": "https://www.anatolianarchaeology.net/?p=6247"
+    }
+   ],
+   "earth": "Gereme, Develi, Kayseri",
+   "koordinat_kaynagi": "v9 (doğrulanmadı)"
+  },
+  {
+   "id": "petroglifler",
+   "katman": "tarih",
+   "ad": "Develi kaya resimleri (petroglifler)",
+   "lat": null,
+   "lon": null,
+   "konum": "yayimlanmadi",
+   "icerik": "kismen",
+   "aciklama": "Develi'de bulunan ve yaklaşık MÖ 6000'e (≈ 8000 yıl önce) tarihlendirilen eş merkezli ve çizgisel kaya oymaları. Bilimsel değerlendirme sürüyor. Alanın korunması açısından konum haritada gösterilmiyor.",
+   "kaynak": [
+    {
+     "t": "Arkeonews — 8,000-year-old rock art discovered in Kayseri",
+     "u": "https://arkeonews.net/before-the-hittites-8000-year-old-rock-art-discovered-in-kayseri-turkiye/"
+    },
+    {
+     "t": "Anatolian Archaeology — Before the Hittites",
+     "u": "https://www.anatolianarchaeology.net/?p=8317"
+    }
+   ],
+   "earth": "Develi, Kayseri, Türkiye"
+  },
+  {
+   "id": "sultan-sazligi",
+   "katman": "doga",
+   "ad": "Sultan Sazlığı Milli Parkı",
+   "lat": 38.2422,
+   "lon": 35.1856,
+   "konum": "dogrulandi",
+   "icerik": "dogrulandi",
+   "aciklama": "2006'da milli park ilan edilen, 24.357 hektarlık, tatlı ve tuzlu su ekosistemlerinin bir arada bulunduğu sulak alan. Develi, Yahyalı ve Yeşilhisar sınırlarındadır. Kaynaklara göre 250'den fazla, güncel haberlerde 301 kuş türü. Develi 2. Merhale Projesi kapsamında tünelle su takviyesi yapılıyor.",
+   "kaynak": [
+    {
+     "t": "DHA — 301 kuş türünün bulunduğu Sultan Sazlığı",
+     "u": "https://www.dha.com.tr/foto-galeri/301-kus-turunun-bulundugu-sultan-sazliginda-kayikli-gezi-2489048"
+    },
+    {
+     "t": "Wikipedia — Sultan Reedy National Park",
+     "u": "https://en.wikipedia.org/wiki/Sultan_Reedy_National_Park"
+    },
+    {
+     "t": "Sözcü — DSİ su takviyesi",
+     "u": "https://www.sozcu.com.tr/tunelle-tersine-akitilan-su-alli-turnalara-hayat-veriyor-wp7839839"
+    }
+   ],
+   "earth": "Sultan Sazlığı Milli Parkı, Kayseri"
+  },
+  {
+   "id": "elbiz",
+   "katman": "doga",
+   "ad": "Elbiz Parkı",
+   "lat": 38.385,
+   "lon": 35.485,
+   "konum": "yaklasik",
+   "icerik": "bekliyor",
+   "aciklama": "v9'dan aktarıldı: asırlık çınarlar ve tarihi havuz. Bu bilgi için bağımsız bir kaynak henüz bulunamadı; konum Develi merkezine yakın, yaklaşıktır.",
+   "kaynak": [],
+   "earth": "Elbiz, Develi, Kayseri",
+   "koordinat_kaynagi": "v9 (doğrulanmadı)"
+  },
+  {
+   "id": "zamanti-kaynak",
+   "katman": "zamanti",
+   "sira": 1,
+   "ad": "1. Kaynak — Uzunyayla (Şerefiye, Pınarbaşı)",
+   "lat": 38.9447,
+   "lon": 36.6732,
+   "konum": "yaklasik",
+   "icerik": "dogrulandi",
+   "aciklama": "Zamantı, Pınarbaşı ilçesinde ortalama 1500 m yükseltideki Uzunyayla'dan kaynağını alır; il yayınlarına göre Şerefiye köyünde doğar ve yaklaşık 308 km akar. Uzunyayla, Doğu Toroslar'ın kuzeyinde bir Neojen havzasıdır. v9'daki '2300 m karstik kaynak' ifadesi kaynaklarla desteklenmediği için kaldırıldı. İşaret Şerefiye yerleşimindedir.",
+   "kaynak": [
+    {
+     "t": "Kayseri il tanıtım kitabı (Kalkınma Kütüphanesi)",
+     "u": "https://www.kalkinmakutuphanesi.gov.tr/assets/upload/dosyalar/kayseri-kitap-ingilizce.pdf"
+    },
+    {
+     "t": "Zamantı Çayı havzası ekoturizm çalışması (DergiPark)",
+     "u": "https://dergipark.org.tr/en/download/article-file/84905"
+    },
+    {
+     "t": "Zamantı Çayı Yukarı Havzası (Uzunyayla) jeomorfolojisi",
+     "u": "https://dergipark.org.tr/en/download/article-file/112037"
+    }
+   ],
+   "earth": "Şerefiye, Pınarbaşı, Kayseri"
+  },
+  {
+   "id": "zamanti-pinarbasi",
+   "katman": "zamanti",
+   "sira": 2,
+   "ad": "2. Pınarbaşı (antik Ariaratheia)",
+   "lat": 38.722,
+   "lon": 36.391,
+   "konum": "yaklasik",
+   "icerik": "dogrulandi",
+   "aciklama": "Zamantı (antik Tsamantos) Pınarbaşı'ndan geçer. Kent, Kapadokya Kralı IV. Ariarathes'in kurduğu Ariaratheia'nın yerindedir. Akış buradan güneybatıya, Tomarza ve Develi topraklarına yönelir. v9'daki 'Sarız Vadisi' durağı kaldırıldı: Zamantı Sarız'dan geçmez; Sarız Fayı ise MTA katmanında ayrıca gösterilir.",
+   "kaynak": [
+    {
+     "t": "Duman, H. (2024). Kapadokya Krallığı döneminde Pınarbaşı",
+     "u": "https://dergipark.org.tr/tr/download/article-file/3538252"
+    },
+    {
+     "t": "Wikipedia — Seyhan River (Zamantı güzergâhı)",
+     "u": "https://en.wikipedia.org/wiki/Seyhan_River"
+    }
+   ],
+   "earth": "Pınarbaşı, Kayseri, Türkiye"
+  },
+  {
+   "id": "zamanti-yahyali",
+   "katman": "zamanti",
+   "sira": 3,
+   "ad": "3. Yahyalı — rafting parkı",
+   "lat": 38.1,
+   "lon": 35.3608,
+   "konum": "yaklasik",
+   "icerik": "dogrulandi",
+   "aciklama": "Zamantı'nın Yahyalı kesimi kanyonlarla çevrilidir; ırmağın 15 km'lik bir bölümü ulusal rafting parkı olarak belirlenmiştir. v9'daki 'dünya klasmanı' ifadesi kaynaklarla desteklenmediği için kaldırıldı. İşaret Yahyalı ilçe merkezindedir.",
+   "kaynak": [
+    {
+     "t": "Küre Ansiklopedi — Zamantı River",
+     "u": "https://test.kureansiklopedi.com/en/detay/zamanti-river-91207"
+    },
+    {
+     "t": "Wikipedia — Yahyalı",
+     "u": "https://en.wikipedia.org/wiki/Yahyal%C4%B1"
+    }
+   ],
+   "earth": "Yahyalı, Kayseri, Türkiye"
+  },
+  {
+   "id": "zamanti-farasa",
+   "katman": "zamanti",
+   "sira": 4,
+   "ad": "4. Faraşa (Çamlıca)",
+   "lat": null,
+   "lon": null,
+   "konum": "yayimlanmadi",
+   "icerik": "kismen",
+   "aciklama": "Yahyalı'ya bağlı Çamlıca, 1923 nüfus mübadelesine kadar Faraşa (Pharasa) adıyla bilinen bir Rum köyüydü ve Zamantı boyunca uzanan bir Orta Çağ madencilik merkeziydi. v9'daki 'Kapadokya peribacaları' tanımı kaldırıldı. Koordinat doğrulanınca haritaya eklenecek.",
+   "kaynak": [
+    {
+     "t": "Wikipedia — Yahyalı (Çamlıca / Pharasa)",
+     "u": "https://en.wikipedia.org/wiki/Yahyal%C4%B1"
+    },
+    {
+     "t": "Yahyalı tarihçesi (yerel kaynak)",
+     "u": "https://yahyalifoto.blogspot.com/2009/04"
+    }
+   ],
+   "earth": "Çamlıca, Yahyalı, Kayseri"
+  },
+  {
+   "id": "zamanti-kapuzbasi",
+   "katman": "zamanti",
+   "sira": 5,
+   "ad": "5. Kapuzbaşı Şelaleleri",
+   "lat": 37.7738,
+   "lon": 35.3925,
+   "konum": "yaklasik",
+   "icerik": "dogrulandi",
+   "aciklama": "Aladağlar Milli Parkı içinde, yaklaşık 500 m²'lik alanda kaya yüzeyinden çıkan 7 şelale; yükseklikleri kaynaklara göre 30–76 m arasında. Aladağlar'ın kar ve buzul sularıyla beslenir, Aksu üzerinden Zamantı'ya karışır. Zamantı, Kayseri sınırından Kapuzbaşı köyünde çıkar. 'Dünyanın en yüksek ikinci şelalesi' ifadesi yerel tanıtım iddiasıdır, bilimsel bir sıralama değildir. Koordinat tek bir ikincil kaynaktan alındı.",
+   "kaynak": [
+    {
+     "t": "Kültür Portalı via Küre Ansiklopedi — Kapuzbaşı Şelaleleri",
+     "u": "https://kureansiklopedi.com/tr/detay/kapuzbasi-selaleleri-c317f"
+    },
+    {
+     "t": "Habertürk — Kapuzbaşı Şelaleleri",
+     "u": "https://www.haberturk.com/kayseri-deki-kapuzbasi-selaleleri-yilin-her-gunu-cagliyor-3841641"
+    },
+    {
+     "t": "AroundUs — koordinat",
+     "u": "https://aroundus.com/p/9646692-kapuzbashi-waterfalls"
+    }
+   ],
+   "earth": "Kapuzbaşı Şelalesi, Yahyalı, Kayseri"
+  },
+  {
+   "id": "zamanti-goksu",
+   "katman": "zamanti",
+   "sira": 6,
+   "ad": "6. Göksu ile birleşme — Seyhan'ın doğuşu (Aladağ)",
+   "lat": 37.6061,
+   "lon": 35.585,
+   "konum": "dogrulandi",
+   "icerik": "dogrulandi",
+   "aciklama": "Zamantı ve Göksu, Adana'nın Aladağ ilçesinde, Adana'nın yaklaşık 80 km kuzeyinde birleşerek Seyhan Nehri'ni oluşturur. Zamantı, Seyhan'ın en uzun koludur. v9'daki konum (37.230, 35.320) yaklaşık 45 km hatalıydı; düzeltildi.",
+   "kaynak": [
+    {
+     "t": "Wikipedia (de) — Zamantı: birleşme koordinatı 37°36′22″K 35°35′06″D",
+     "u": "https://www.wikiwand.com/de/Zamant%C4%B1"
+    },
+    {
+     "t": "Wikipedia — Zamantı River",
+     "u": "https://en.wikipedia.org/wiki/Zamant%C4%B1_River"
+    }
+   ],
+   "earth": "Aladağ, Adana, Türkiye"
+  },
+  {
+   "id": "erciyes-aricilik",
+   "katman": "aricilik",
+   "ad": "Erciyes yaylalarında gezgin arıcılık",
+   "lat": null,
+   "lon": null,
+   "konum": "yayimlanmadi",
+   "icerik": "kismen",
+   "aciklama": "Yaz aylarında Adana, Mersin ve Muğla gibi illerden gelen gezgin arıcılar, Erciyes'in yaklaşık 2500 m rakımlı Tekir Yaylası'na ve 2000 m'nin üzerindeki kesimlere kovan taşır. Bu nokta arıcılık katmanını tanıtır; fay veya jeoloji katmanıyla nedensel bir ilişki öne sürmez. Tekir Yaylası koordinatı doğrulanınca haritaya eklenecek.",
+   "kaynak": [
+    {
+     "t": "AA / Ekonomim — Kaliteli bal üretimi için Erciyes'e geliyorlar",
+     "u": "https://www.ekonomim.com/sehirler/kaliteli-bal-uretimi-icin-erciyese-geliyorlar-haberi-478972"
+    },
+    {
+     "t": "Sarıözkan vd. (2009). Kapadokya'da arıcılık. Erciyes Üniv. Vet. Fak. Derg.",
+     "u": "https://dergipark.org.tr/en/download/article-file/66141"
+    }
+   ],
+   "earth": "Tekir Yaylası, Erciyes, Kayseri"
+  }
+ ]
+}

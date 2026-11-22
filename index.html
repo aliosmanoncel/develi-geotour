@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Develi Jeo-Tur v10 — Erciyes'ten Seyhan'a</title>
+<meta name="description" content="Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar (MTA 2026), tarihsel depremler, arkeoloji, doğa ve arıcılık katmanlarını kaynaklarıyla gösteren etkileşimli harita.">
+<meta name="theme-color" content="#1f2a37">
+<meta property="og:title" content="Develi Jeo-Tur v10 — Erciyes'ten Seyhan'a">
+<meta property="og:description" content="Kaynaklı, katmanlı jeoturizm haritası: MTA 2026 diri fayları, tarihsel depremler, Fıraktın, Gereme, Sultan Sazlığı ve Zamantı rotası.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root{--bg:#f5f7fa;--panel:#fff;--text:#1f2a37;--muted:#5b6b7f;--border:#dde3ea;--accent:#e67e22;--head:#1f2a37;--ok:#1e8e3e;--warn:#b7791f;--bad:#c0392b}
+  [data-theme="dark"]{--bg:#12171d;--panel:#1c242d;--text:#e6edf3;--muted:#9fb0c2;--border:#2e3a47;--head:#0b1015}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+  header{background:var(--head);color:#fff;padding:12px 16px;position:sticky;top:0;z-index:1000}
+  .hrow{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:1100px;margin:0 auto}
+  h1{font-size:1.05rem;margin:0;letter-spacing:.02em}
+  h1 small{font-weight:400;opacity:.7;font-size:.8rem;margin-left:6px}
+  .hbtns{display:flex;gap:6px}
+  .ibtn{background:rgba(255,255,255,.12);border:0;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:15px}
+  .ibtn[aria-pressed="true"]{background:var(--accent)}
+  .search{max-width:1100px;margin:10px auto 0;position:relative}
+  .search input{width:100%;padding:9px 14px 9px 36px;border-radius:20px;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:14px}
+  .search input::placeholder{color:rgba(255,255,255,.65)}
+  .search i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.7)}
+  #map{height:52vh;min-height:320px;border-bottom:3px solid var(--accent)}
+  main{max-width:1100px;margin:0 auto;padding:14px}
+  .tour{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:12px}
+  .tour b{margin-right:auto}
+  .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:7px 11px;border-radius:7px;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+  .btn.primary{background:#2980b9;border-color:#2980b9;color:#fff}
+  .btn:disabled{opacity:.45;cursor:default}
+  #tourStatus{font-size:13px;color:var(--muted);width:100%}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:6px}
+  .chip{white-space:nowrap;border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:16px;padding:5px 12px;font-size:12.5px;cursor:pointer}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .layer{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+  .layer>summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:600;display:flex;align-items:center;gap:10px;border-left:5px solid var(--c)}
+  .layer>summary::-webkit-details-marker{display:none}
+  .layer>summary .n{margin-left:auto;font-weight:400;color:var(--muted);font-size:12px}
+  .pt{padding:12px 14px;border-top:1px solid var(--border)}
+  .pt h3{margin:0 0 4px;font-size:15px}
+  .pt p{margin:6px 0;font-size:13.5px;text-align:justify;hyphens:auto}
+  .badges{display:flex;flex-wrap:wrap;gap:5px}
+  .badge{font-size:11px;padding:2px 7px;border-radius:10px;border:1px solid currentColor}
+  .b-dogrulandi{color:var(--ok)}.b-kismen,.b-yaklasik{color:var(--warn)}.b-bekliyor,.b-yayimlanmadi{color:var(--bad)}
+  .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .src{font-size:12px;color:var(--muted);margin:6px 0 0;padding-left:18px}
+  .src a{color:inherit}
+  .pt.hl{background:rgba(230,126,34,.1)}
+  .note{font-size:12.5px;color:var(--muted);background:var(--panel);border:1px dashed var(--border);border-radius:10px;padding:10px 12px;margin:12px 0}
+  footer{max-width:1100px;margin:0 auto;padding:6px 14px 40px;font-size:12px;color:var(--muted)}
+  footer a{color:inherit}
+  .pin{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,.35);border:2px solid #fff}
+  .pin i{transform:rotate(45deg);color:#fff;font-size:12px}
+  .pin.approx{border-style:dashed}
+  .legend{background:var(--panel);color:var(--text);padding:8px 10px;border-radius:8px;font-size:11.5px;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,.3);max-width:220px}
+  .legend .sw{display:inline-block;width:22px;height:0;border-top:3px solid;vertical-align:middle;margin-right:6px}
+  .leaflet-popup-content{font-size:13px;line-height:1.5}
+  #toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#1f2a37;color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .3s;z-index:2000;pointer-events:none}
+  #toast.on{opacity:1}
+  @media (max-width:600px){#map{height:46vh}h1 small{display:none}.legend{font-size:10px;max-width:150px;padding:5px 7px;opacity:.92}.legend small{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <h1>DEVELİ JEO-TUR <small>v10 · Erciyes'ten Seyhan'a</small></h1>
+    <div class="hbtns">
+      <button class="ibtn" id="btnLocate" title="Konumum" aria-label="Konumumu göster"><i class="fa-solid fa-location-crosshairs"></i></button>
+      <button class="ibtn" id="btnMusic" title="Arka plan müziği" aria-label="Arka plan müziği" aria-pressed="false"><i class="fa-solid fa-music"></i></button>
+      <button class="ibtn" id="btnTheme" title="Tema" aria-label="Koyu/açık tema"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </div>
+  <div class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="q" type="search" placeholder="Ara: Fıraktın, Kapuzbaşı, 1940, Sultan Sazlığı…" aria-label="Noktalarda ara"></div>
+</header>
+
+<div id="map" role="region" aria-label="Harita"></div>
+
+<main>
+  <div class="tour" aria-live="polite">
+    <b><i class="fa-solid fa-water" style="color:#2980b9"></i> Zamantı Irmağı rehberli tur</b>
+    <button class="btn primary" id="tStart"><i class="fa-solid fa-play"></i> Başlat</button>
+    <button class="btn" id="tPrev" disabled><i class="fa-solid fa-backward-step"></i></button>
+    <button class="btn" id="tNext" disabled><i class="fa-solid fa-forward-step"></i></button>
+    <button class="btn" id="tStop" disabled><i class="fa-solid fa-stop"></i></button>
+    <label class="btn"><input type="checkbox" id="tVoice"> Sesli anlatım</label>
+    <span id="tourStatus">Kaynaktan (Uzunyayla) Göksu ile birleşmeye kadar 6 durak.</span>
+  </div>
+
+  <div class="chips" id="chips" role="tablist" aria-label="Katman süzgeci"></div>
+  <div id="layers"></div>
+
+  <div class="note">
+    <b>Fay katmanı hakkında:</b> Haritadaki fay çizgileri elle çizilmemiştir; MTA 2026 Türkiye Diri Fay Haritası'nın bu bölgeye ait kesitidir ve gösterim için sadeleştirilmiştir (yaklaşık 130 m sapma). Tarihsel depremlerin işaretleri ise dış merkez değil, yaklaşık hasar/yerleşim merkezidir; bir depremin hangi faydan kaynaklandığı, kaynağında açıkça belirtilmedikçe ima edilmez. Mühendislik veya planlama amacıyla özgün MTA verisine başvurun.
+  </div>
+  <div class="acts" style="margin-bottom:10px">
+    <button class="btn" id="btnKml"><i class="fa-solid fa-earth-europe"></i> KML indir (Google Earth Pro)</button>
+    <button class="btn" id="btnShareAll"><i class="fa-solid fa-share-nodes"></i> Bu haritayı paylaş</button>
+  </div>
+</main>
+
+<footer>
+  <p><b>Fay verisi:</b> <span id="faultCite">Elmacı, H. vd., 2026. Türkiye Diri Fay Haritası. MTA, Özel Yayın Serisi-60.</span></p>
+  <p><b>Harita altlığı:</b> © OpenStreetMap katkıcıları · © CARTO. <b>Müzik:</b> Pixabay (bağlama enstrümantal), varsayılan olarak kapalı.</p>
+  <p>Hazırlayan: Prof. Dr. Ali Osman Öncel · İstanbul Üniversitesi-Cerrahpaşa · <a href="https://aliosmanoncel.blogspot.com/2025/11/develidigitalguide.html" target="_blank" rel="noopener">Blog yazısı ve yorumlar</a> · Lisans: CC BY-NC-SA 4.0 · Sürüm <span id="ver">10.0.0</span></p>
+</footer>
+<div id="toast" role="status"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+(function(){
+'use strict';
+var AKT = {H:'Holosen (son ~11.700 yıl)', K:'Kuvaterner (son ~2,58 milyon yıl)', OK:'Olası Kuvaterner', DYK:'Deprem yüzey kırığı (tarihsel/aletsel)'};
+var KAY = {SoD:'sol yanal doğrultu atımlı', SaD:'sağ yanal doğrultu atımlı', N:'normal', T:'ters / bindirme', 'AÇ':'açılma'};
+var DUR = {dogrulandi:'doğrulandı', kismen:'kısmen doğrulandı', bekliyor:'doğrulama bekliyor', yaklasik:'yaklaşık konum', yayimlanmadi:'konum yok'};
+
+var map, data, ptLayers = {}, markers = {}, faultStrong, faultWeak, userMk, activeFilter = 'all';
+var tour = {on:false, i:-1, stops:[]};
+var audio = null;
+var MUSIC = 'https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3?filename=turkish-long-neck-lute-baglama-110636.mp3';
+
+function $(id){ return document.getElementById(id); }
+function el(tag, attrs, kids){
+  var e = document.createElement(tag);
+  if (attrs) Object.keys(attrs).forEach(function(k){
+    if (k === 'text') e.textContent = attrs[k];
+    else if (k === 'html') e.innerHTML = attrs[k];
+    else if (k.slice(0,2) === 'on') e.addEventListener(k.slice(2), attrs[k]);
+    else e.setAttribute(k, attrs[k]);
+  });
+  (kids || []).forEach(function(c){ if (c) e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+  return e;
+}
+function toast(msg){ var t = $('toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(t._h); t._h = setTimeout(function(){ t.classList.remove('on'); }, 2600); }
+function earthUrl(q){ return 'https://earth.google.com/web/search/' + encodeURIComponent(q).replace(/%20/g, '+'); }
+function expand(code, dict){
+  if (!code) return '—';
+  return String(code).split('+').map(function(c){ return dict[c] || c; }).join(' + ');
+}
+function esc(s){ var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+/* ---------- MAP ---------- */
+function initMap(){
+  var light = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:18, attribution:'© OpenStreetMap katkıcıları'});
+  var dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {maxZoom:18, attribution:'© OpenStreetMap · © CARTO'});
+  map = L.map('map', {center:[38.25, 35.75], zoom:8, layers:[light]});
+  map._bases = {light:light, dark:dark};
+  map.createPane('faults'); map.getPane('faults').style.zIndex = 350;
+  var legend = L.control({position:'bottomright'});
+  legend.onAdd = function(){
+    var d = L.DomUtil.create('div', 'legend');
+    d.innerHTML = '<b>MTA 2026 diri faylar</b><br>' +
+      '<span class="sw" style="border-color:#e11d48"></span>Deprem yüzey kırığı<br>' +
+      '<span class="sw" style="border-color:#f97316"></span>Holosen<br>' +
+      '<span class="sw" style="border-color:#94a3b8;border-top-style:dashed"></span>Kuvaterner / olası<br>' +
+      '<small>Kesikli kenarlı işaret = yaklaşık konum</small>';
+    return d;
+  };
+  legend.addTo(map);
+}
+
+function faultStyle(p){
+  var a = p.aktivite || '';
+  if (/DYK/.test(a)) return {color:'#e11d48', weight:3, opacity:.9, pane:'faults'};
+  if (/(^|\+)H(\+|$)/.test(a)) return {color:'#f97316', weight:2.2, opacity:.85, pane:'faults'};
+  return {color:'#94a3b8', weight:1.4, opacity:.7, dashArray:'5 5', pane:'faults'};
+}
+function faultPopup(p){
+  var h = '<b>' + esc(p.fay_adi || 'Adsız fay') + '</b>';
+  if (p.segment) h += '<br>' + esc(p.segment);
+  h += '<br><small>Etkinlik: ' + esc(expand(p.aktivite, AKT)) + '<br>Kayma: ' + esc(expand(p.kayma_turu, KAY)) + '</small>';
+  if (p.dep_tarih) h += '<br><small>Yüzey kırığı oluşturan deprem: ' + esc(p.dep_tarih) + (p.dep_mag ? ' · M ' + esc(p.dep_mag) : '') + '</small>';
+  h += '<br><small style="opacity:.7">Kaynak: MTA 2026 (sadeleştirilmiş)</small>';
+  return h;
+}
+
+function addFaults(gj){
+  if (gj.kaynak) $('faultCite').textContent = gj.kaynak;
+  var strong = {type:'FeatureCollection', features:[]}, weak = {type:'FeatureCollection', features:[]};
+  gj.features.forEach(function(f){
+    var a = f.properties.aktivite || '';
+    (/DYK|(^|\+)H(\+|$)/.test(a) ? strong : weak).features.push(f);
+  });
+  function mk(fc){ return L.geoJSON(fc, {style:function(f){ return faultStyle(f.properties); }, onEachFeature:function(f, l){ l.bindPopup(faultPopup(f.properties)); }}); }
+  faultStrong = mk(strong).addTo(map);
+  faultWeak = mk(weak).addTo(map);
+  return {strong:faultStrong, weak:faultWeak};
+}
+
+function pinIcon(kat, approx){
+  var k = data.katmanlar[kat];
+  return L.divIcon({className:'', iconSize:[28,28], iconAnchor:[14,28], popupAnchor:[0,-26],
+    html:'<div class="pin' + (approx ? ' approx' : '') + '" style="background:' + k.renk + '"><i class="fa-solid ' + k.ikon + '"></i></div>'});
+}
+
+function popupFor(n){
+  var h = '<b>' + esc(n.ad) + '</b><br><small>' + esc(DUR[n.konum]) + ' · ' + esc(DUR[n.icerik]) + '</small><br>' +
+    esc(n.aciklama.length > 260 ? n.aciklama.slice(0, 257) + '…' : n.aciklama) +
+    '<br><a href="#' + encodeURIComponent(n.id) + '">Ayrıntı ve kaynaklar ↓</a> · <a target="_blank" rel="noopener" href="' + earthUrl(n.earth || n.ad) + '">Google Earth</a>';
+  return h;
+}
+
+/* ---------- LIST ---------- */
+function badge(code){ return el('span', {'class':'badge b-' + code, text:DUR[code]}); }
+
+function renderList(){
+  var box = $('layers'); box.innerHTML = '';
+  var chips = $('chips'); chips.innerHTML = '';
+  chips.appendChild(el('button', {'class':'chip active', 'data-f':'all', text:'Hepsi', onclick:chipClick}));
+  Object.keys(data.katmanlar).forEach(function(kat){
+    var k = data.katmanlar[kat];
+    var pts = data.noktalar.filter(function(n){ return n.katman === kat; });
+    if (kat === 'zamanti') pts.sort(function(a, b){ return a.sira - b.sira; });
+    chips.appendChild(el('button', {'class':'chip', 'data-f':kat, text:k.ad, onclick:chipClick}));
+    var det = el('details', {'class':'layer', 'data-kat':kat, style:'--c:' + k.renk});
+    if (kat === 'zamanti') det.open = true;
+    det.appendChild(el('summary', null, [el('i', {'class':'fa-solid ' + k.ikon, style:'color:' + k.renk}), k.ad, el('span', {'class':'n', text:pts.length + ' nokta'})]));
+    pts.forEach(function(n){ det.appendChild(pointCard(n)); });
+    box.appendChild(det);
+  });
+}
+
+function pointCard(n){
+  var card = el('article', {'class':'pt', id:'pt-' + n.id, 'data-s':(n.ad + ' ' + n.aciklama).toLocaleLowerCase('tr')});
+  card.appendChild(el('h3', {text:n.ad}));
+  card.appendChild(el('div', {'class':'badges'}, [badge(n.konum), badge(n.icerik), n.oneren ? el('span', {'class':'badge', text:'Öneren: ' + n.oneren}) : null]));
+  card.appendChild(el('p', {text:n.aciklama}));
+  var acts = el('div', {'class':'acts'});
+  if (n.lat != null) acts.appendChild(el('button', {'class':'btn', onclick:function(){ focusPoint(n.id, true); }}, [el('i', {'class':'fa-solid fa-location-dot'}), 'Haritada göster']));
+  acts.appendChild(el('a', {'class':'btn', href:earthUrl(n.earth || n.ad), target:'_blank', rel:'noopener'}, [el('i', {'class':'fa-solid fa-globe'}), 'Google Earth']));
+  acts.appendChild(el('button', {'class':'btn', onclick:function(){ share(n); }}, [el('i', {'class':'fa-solid fa-share-nodes'}), 'Paylaş']));
+  card.appendChild(acts);
+  if (n.kaynak && n.kaynak.length){
+    var ul = el('ul', {'class':'src'});
+    n.kaynak.forEach(function(s){ ul.appendChild(el('li', null, [el('a', {href:s.u, target:'_blank', rel:'noopener', text:s.t})])); });
+    card.appendChild(ul);
+  } else {
+    card.appendChild(el('p', {'class':'src', style:'padding:0', text:'Kaynak: henüz yok.'}));
+  }
+  return card;
+}
+
+function chipClick(e){
+  activeFilter = e.currentTarget.getAttribute('data-f');
+  document.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('active', c === e.currentTarget); });
+  document.querySelectorAll('.layer').forEach(function(d){
+    var show = activeFilter === 'all' || d.getAttribute('data-kat') === activeFilter;
+    d.style.display = show ? '' : 'none';
+    if (show && activeFilter !== 'all') d.open = true;
+  });
+  Object.keys(ptLayers).forEach(function(kat){
+    var on = activeFilter === 'all' || kat === activeFilter;
+    if (on && !map.hasLayer(ptLayers[kat])) map.addLayer(ptLayers[kat]);
+    if (!on && map.hasLayer(ptLayers[kat])) map.removeLayer(ptLayers[kat]);
+  });
+}
+
+function search(){
+  var v = $('q').value.trim().toLocaleLowerCase('tr');
+  document.querySelectorAll('.pt').forEach(function(p){ p.style.display = !v || p.getAttribute('data-s').indexOf(v) > -1 ? '' : 'none'; });
+  if (v) document.querySelectorAll('.layer').forEach(function(d){ d.open = true; });
+}
+
+/* ---------- ACTIONS ---------- */
+function focusPoint(id, scroll){
+  var n = data.noktalar.filter(function(x){ return x.id === id; })[0];
+  if (!n) return;
+  document.querySelectorAll('.pt.hl').forEach(function(p){ p.classList.remove('hl'); });
+  var card = $('pt-' + id);
+  if (card){ card.classList.add('hl'); card.parentNode.open = true; }
+  if (n.lat != null && markers[id]){
+    if (!map.hasLayer(ptLayers[n.katman])) map.addLayer(ptLayers[n.katman]);
+    map.flyTo([n.lat, n.lon], 11, {duration:1.5});
+    markers[id].openPopup();
+    if (scroll) $('map').scrollIntoView({behavior:'smooth', block:'start'});
+  } else if (card && !scroll){
+    card.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function share(n){
+  var url = location.href.split('#')[0] + (n ? '#' + n.id : '');
+  var title = n ? n.ad + ' — Develi Jeo-Tur' : 'Develi Jeo-Tur v10';
+  if (navigator.share){ navigator.share({title:title, url:url}).catch(function(){}); return; }
+  if (navigator.clipboard){ navigator.clipboard.writeText(url).then(function(){ toast('Bağlantı kopyalandı'); }, function(){ toast(url); }); }
+  else toast(url);
+}
+
+function exportKML(){
+  function x(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  var mapped = data.noktalar.filter(function(n){ return n.lat != null; });
+  var pm = mapped.map(function(n){
+    return '<Placemark><name>' + x(n.ad) + '</name><description>' + x(n.aciklama + ' [' + DUR[n.konum] + ']') + '</description><Point><coordinates>' + n.lon + ',' + n.lat + ',0</coordinates></Point></Placemark>';
+  }).join('');
+  var kml = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Develi Jeo-Tur v10</name>' + pm + '</Document></kml>';
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([kml], {type:'application/vnd.google-earth.kml+xml'}));
+  a.download = 'DeveliJeoTur-v10.kml'; document.body.appendChild(a); a.click(); a.remove();
+  toast('KML indirildi: ' + mapped.length + ' nokta');
+}
+
+function locate(){
+  if (!navigator.geolocation){ toast('Tarayıcınız konum desteklemiyor'); return; }
+  navigator.geolocation.getCurrentPosition(function(p){
+    var ll = [p.coords.latitude, p.coords.longitude];
+    if (userMk) map.removeLayer(userMk);
+    userMk = L.circleMarker(ll, {radius:8, color:'#2563eb', fillOpacity:.8}).addTo(map).bindPopup('Buradasınız').openPopup();
+    map.setView(ll, 11);
+  }, function(){ toast('Konum alınamadı'); }, {timeout:10000});
+}
+
+function toggleTheme(){
+  var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  $('btnTheme').innerHTML = dark ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+  if (dark){ map.removeLayer(map._bases.dark); map.addLayer(map._bases.light); }
+  else { map.removeLayer(map._bases.light); map.addLayer(map._bases.dark); }
+  try { localStorage.setItem('djt-theme', dark ? 'light' : 'dark'); } catch(e){}
+}
+
+function toggleMusic(){
+  var b = $('btnMusic');
+  if (!audio){ audio = new Audio(MUSIC); audio.loop = true; audio.volume = .35; }
+  if (audio.paused){ audio.play().then(function(){ b.setAttribute('aria-pressed', 'true'); toast('Bağlama enstrümantal (Pixabay)'); }, function(){ toast('Müzik çalınamadı'); }); }
+  else { audio.pause(); b.setAttribute('aria-pressed', 'false'); }
+}
+
+/* ---------- TOUR ---------- */
+function speak(text){
+  if (!$('tVoice').checked || !('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text); u.lang = 'tr-TR'; u.rate = 1;
+  speechSynthesis.speak(u);
+}
+function tourGo(i){
+  tour.i = Math.max(0, Math.min(tour.stops.length - 1, i));
+  var n = tour.stops[tour.i];
+  $('tourStatus').textContent = 'Durak ' + (tour.i + 1) + '/' + tour.stops.length + ': ' + n.ad + (n.lat == null ? ' (konumu doğrulanmadığı için haritada gösterilmiyor)' : '');
+  $('tPrev').disabled = tour.i === 0; $('tNext').disabled = tour.i === tour.stops.length - 1;
+  focusPoint(n.id, n.lat != null);
+  speak(n.ad + '. ' + n.aciklama);
+}
+function tourStart(){
+  tour.stops = data.noktalar.filter(function(n){ return n.katman === 'zamanti'; }).sort(function(a, b){ return a.sira - b.sira; });
+  tour.on = true; $('tStop').disabled = false; $('tStart').disabled = true;
+  if (!map.hasLayer(ptLayers.zamanti)) map.addLayer(ptLayers.zamanti);
+  tourGo(0);
+}
+function tourStop(){
+  tour.on = false; tour.i = -1;
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  $('tStart').disabled = false; $('tPrev').disabled = $('tNext').disabled = $('tStop').disabled = true;
+  $('tourStatus').textContent = 'Tur durduruldu.';
+  map.flyTo([38.25, 35.75], 8);
+}
+
+/* ---------- BOOT ---------- */
+function build(points, faults){
+  data = points;
+  $('ver').textContent = data.surum;
+  var overlays = {};
+  if (faults){
+    var f = addFaults(faults);
+    overlays['Diri faylar — yüzey kırığı / Holosen'] = f.strong;
+    overlays['Diri faylar — Kuvaterner / olası'] = f.weak;
+  }
+  Object.keys(data.katmanlar).forEach(function(kat){
+    var g = L.layerGroup();
+    data.noktalar.filter(function(n){ return n.katman === kat && n.lat != null; }).forEach(function(n){
+      markers[n.id] = L.marker([n.lat, n.lon], {icon:pinIcon(kat, n.konum !== 'dogrulandi'), title:n.ad}).bindPopup(popupFor(n)).addTo(g);
+    });
+    g.addTo(map); ptLayers[kat] = g;
+    overlays['<span style="color:' + data.katmanlar[kat].renk + '">●</span> ' + data.katmanlar[kat].ad] = g;
+  });
+  L.control.layers({'Açık altlık':map._bases.light, 'Koyu altlık':map._bases.dark}, overlays, {collapsed:true}).addTo(map);
+  renderList();
+  if (location.hash.length > 1) setTimeout(function(){ focusPoint(decodeURIComponent(location.hash.slice(1)), false); }, 400);
+}
+
+function boot(){
+  initMap();
+  try { if (localStorage.getItem('djt-theme') === 'dark') toggleTheme(); } catch(e){}
+  $('q').addEventListener('input', search);
+  $('btnTheme').addEventListener('click', toggleTheme);
+  $('btnMusic').addEventListener('click', toggleMusic);
+  $('btnLocate').addEventListener('click', locate);
+  $('btnKml').addEventListener('click', exportKML);
+  $('btnShareAll').addEventListener('click', function(){ share(null); });
+  $('tStart').addEventListener('click', tourStart);
+  $('tStop').addEventListener('click', tourStop);
+  $('tNext').addEventListener('click', function(){ tourGo(tour.i + 1); });
+  $('tPrev').addEventListener('click', function(){ tourGo(tour.i - 1); });
+  window.addEventListener('hashchange', function(){ focusPoint(decodeURIComponent(location.hash.slice(1)), false); });
+  Promise.all([
+    fetch('data/points.json').then(function(r){ if (!r.ok) throw new Error('points'); return r.json(); }),
+    fetch('data/faults-mta2026-develi.geojson').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+  ]).then(function(res){
+    build(res[0], res[1]);
+    if (!res[1]) toast('Fay katmanı yüklenemedi');
+  }).catch(function(){
+    $('layers').innerHTML = '<p class="note">Veri yüklenemedi. Sayfa bir web sunucusu üzerinden açılmalıdır (GitHub Pages).</p>';
+  });
+}
+document.addEventListener('DOMContentLoaded', boot);
+})();
+</script>
+</body>
+</html>
