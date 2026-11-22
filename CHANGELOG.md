@@ -1,5 +1,10 @@
 # Sürüm notu
 
+## 10.0.2 — 2026-11-22
+
+- Arayüz: haritaya kaydırıldığında üst kısmın yapışkan başlık altında kalması düzeltildi (`scroll-margin-top`). İçerik değişikliği yok.
+- GitHub Pages ile yayımlandı: https://aliosmanoncel.github.io/develi-geotour/
+
 ## 10.0.1 — 2026-11-22
 
 - Uygulamaya ve README'ye "bilimsel durum" uyarısı: açık erişim ≠ nihai bilimsel onay.
