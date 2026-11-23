@@ -1,5 +1,11 @@
 # Sürüm notu
 
+## 10.1.3 — 2026-11-23
+
+- **Google Earth bağlantısı koordinata gider.** Önceden düğme yer adını arıyordu (ör. Mezarlı Mantar Kaya → "Yenice, Develi" köyü). Artık koordinatı olan 12 noktada bağlantı doğrudan noktanın koordinatını açar; koordinatsız 5 noktada ad araması kalır. Düğme etiketi hangisi olduğunu söyler: "Google Earth (koordinat)" / "(ad araması)".
+- Doğrulanmamış ya da yaklaşık konumlarda (ör. Kırgıbayır = Şıhlı merkezi) bağlantının ipucu ve açılır penceresi, işaretin yerin kendisi olmayabileceğini belirtir.
+- Amaç: kaynaklı bilgi (atlas kartı, Zotero/web) → Google Earth 3B'de yerin kendisi.
+
 ## 10.1.2 — 2026-11-23
 
 - Mezarlı Mantar Kaya (Yenice köyü): konum eklendi — 38,25042 K, 35,68350 D (38°15′01,5″ K, 35°41′00,6″ D). Koordinat, öneren Nezir Ötegen'in gönderdiği harita işaretidir; yeni konum durumu **"öneren konumu (doğrulanmadı)"** ile gösterilir (doğrulanmamış işaret biçimi). Bağımsız saha/uydu doğrulaması ve kaya mezarının tescil durumu bekliyor; içerik iddiaları değişmeden "doğrulama bekliyor".
