@@ -54,7 +54,7 @@ Nokta kaynakları `data/points.json` içinde her noktanın `kaynak` alanındadı
 
 ## Katkı
 
-Mezarlı Mantar Kaya (Yenice) önerisi: Nezir Ötegen (gazeteci-yazar), 2026-11-21.
+Mezarlı Mantar Kaya (Yenice) önerisi: Nezir Ötegen (gazeteci-yazar), 2026-11-21; konum işareti 2026-11-23 (öneren konumu, bağımsız doğrulama bekliyor).
 
 ## Lisans
 

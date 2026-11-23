@@ -44,11 +44,11 @@
 
 ## 4. Açık konular (v10.0.1 itibarıyla)
 
-Haritada konumu gösterilen nokta sayısı: 16 noktadan 10. Gösterilmeyenler: Mezarlı Mantar Kaya, Gereme, Elbiz Parkı, Develi petroglifleri (koruma), Faraşa/Çamlıca, Erciyes gezgin arıcılığı.
+Haritada konumu gösterilen nokta sayısı: 16 noktadan 11 (2026-11-23: Mezarlı Mantar Kaya öneren konumuyla eklendi). Gösterilmeyenler: Gereme, Elbiz Parkı, Develi petroglifleri (koruma), Faraşa/Çamlıca, Erciyes gezgin arıcılığı.
 
 ### Kullanıcıdan beklenen doğrulamalar
 
-1. Mezarlı Mantar Kaya: Yenice köyü olduğu netleşti (2026-11-22; bölge: Hüseyinli – Yenice – Avlağa mezrası – Gümüşören Barajı kıyısı). Bekleyen: kesin koordinat (yerinden gönderilecek), fotoğraf, kaya mezarının tescil durumu.
+1. Mezarlı Mantar Kaya: Yenice köyü olduğu netleşti (2026-11-22; bölge: Hüseyinli – Yenice – Avlağa mezrası – Gümüşören Barajı kıyısı). Koordinat 2026-11-23'te öneren tarafından gönderildi (38,25042 K, 35,68350 D; durum: öneren konumu, doğrulanmadı). Bekleyen: bağımsız konum doğrulaması (saha/uydu), fotoğraf, kaya mezarının tescil durumu.
 2. 1940 depremi: 20/21 Şubat farkı (çağdaş MTA yazısı ↔ katalog) ve büyüklük (M 5,4 / Ms 5,2 / Mw ≈ 6,7) — AFAD ve KOERI kataloglarının birincil kayıtlarıyla karşılaştırılmalı.
 3. Gereme, Elbiz Parkı, Faraşa ve Tekir Yaylası koordinatları.
 4. MTA 2026 kesitinin genel bir depoda paylaşılması: `fay-yolu-aricilik-veri-bankasi` deposunda tam veri zaten CC BY-NC-SA 4.0 ile yayımlanmış; aynı lisans ve atıf burada da kullanıldı.

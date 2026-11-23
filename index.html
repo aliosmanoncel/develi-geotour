@@ -46,7 +46,7 @@
   .pt p{margin:6px 0;font-size:13.5px;text-align:justify;hyphens:auto}
   .badges{display:flex;flex-wrap:wrap;gap:5px}
   .badge{font-size:11px;padding:2px 7px;border-radius:10px;border:1px solid currentColor}
-  .b-dogrulandi,.b-birincil{color:var(--ok)}.b-kismen,.b-yaklasik,.b-ikincil{color:var(--warn)}.b-bekliyor,.b-yayimlanmadi,.b-yok{color:var(--bad)}
+  .b-dogrulandi,.b-birincil{color:var(--ok)}.b-kismen,.b-yaklasik,.b-oneren,.b-ikincil{color:var(--warn)}.b-bekliyor,.b-yayimlanmadi,.b-yok{color:var(--bad)}
   .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
   .src{font-size:12px;color:var(--muted);margin:6px 0 0;padding-left:18px}
   .src a{color:inherit}
@@ -123,7 +123,7 @@
 'use strict';
 var AKT = {H:'Holosen (son ~11.700 yıl)', K:'Kuvaterner (son ~2,58 milyon yıl)', OK:'Olası Kuvaterner', DYK:'Deprem yüzey kırığı (tarihsel/aletsel)'};
 var KAY = {SoD:'sol yanal doğrultu atımlı', SaD:'sağ yanal doğrultu atımlı', N:'normal', T:'ters / bindirme', 'AÇ':'açılma'};
-var DUR = {dogrulandi:'doğrulandı', kismen:'kısmen doğrulandı', bekliyor:'doğrulama bekliyor', yaklasik:'yaklaşık konum', yayimlanmadi:'konum yok'};
+var DUR = {dogrulandi:'doğrulandı', kismen:'kısmen doğrulandı', bekliyor:'doğrulama bekliyor', yaklasik:'yaklaşık konum', oneren:'öneren konumu (doğrulanmadı)', yayimlanmadi:'konum yok'};
 var KD = {birincil:'birincil kaynak', ikincil:'ikincil kaynak', yok:'kaynak yok'};
 
 var map, data, ptLayers = {}, markers = {}, faultStrong, faultWeak, userMk, activeFilter = 'all';
@@ -166,7 +166,7 @@ function initMap(){
       '<span class="sw" style="border-color:#e11d48"></span>Deprem yüzey kırığı<br>' +
       '<span class="sw" style="border-color:#f97316"></span>Holosen<br>' +
       '<span class="sw" style="border-color:#94a3b8;border-top-style:dashed"></span>Kuvaterner / olası<br>' +
-      '<small>Kesikli kenarlı işaret = yaklaşık konum</small>' +
+      '<small>Kesikli kenarlı işaret = yaklaşık ya da doğrulanmamış (öneren) konum</small>' +
       '<div id="vs30leg"><b>VS30 (m/s) · USGS, eğim tabanlı yaklaşık</b><br>' + VS30BINS.map(function(b){ return '<span class="sq" style="background:' + b[1] + '"></span>' + b[0]; }).join('<br>') + '</div>';
     return d;
   };
@@ -239,6 +239,7 @@ function pointCard(n){
   card.appendChild(el('h3', {text:n.ad}));
   card.appendChild(el('div', {'class':'badges'}, [badge(n.konum, 'Konum'), badge(n.icerik, 'İçerik'), badge(n.kaynak_duzeyi, 'Kaynak'), n.oneren ? el('span', {'class':'badge', text:'Öneren: ' + n.oneren}) : null]));
   card.appendChild(el('p', {text:n.aciklama}));
+  if (n.konum_kaynagi) card.appendChild(el('p', {'class':'vs30line'}, ['Konum kaynağı (' + n.konum_kaynagi.tarih + '): ', el('a', {href:n.konum_kaynagi.u, target:'_blank', rel:'noopener', text:n.konum_kaynagi.t})]));
   if (n.vs30){
     card.appendChild(el('p', {'class':'vs30line', text: n.vs30.deger != null ?
       'VS30 ≈ ' + n.vs30.deger + ' m/s (komşu pikseller ' + n.vs30.min3x3 + '–' + n.vs30.max3x3 + ') · yaklaşık TBDY 2018 karşılığı: ' + n.vs30.tbdy + ' · USGS eğim tabanlı vekil, saha ölçümü değildir' :

@@ -1,5 +1,11 @@
 # Sürüm notu
 
+## 10.1.2 — 2026-11-23
+
+- Mezarlı Mantar Kaya (Yenice köyü): konum eklendi — 38,25042 K, 35,68350 D (38°15′01,5″ K, 35°41′00,6″ D). Koordinat, öneren Nezir Ötegen'in gönderdiği harita işaretidir; yeni konum durumu **"öneren konumu (doğrulanmadı)"** ile gösterilir (doğrulanmamış işaret biçimi). Bağımsız saha/uydu doğrulaması ve kaya mezarının tescil durumu bekliyor; içerik iddiaları değişmeden "doğrulama bekliyor".
+- Noktanın VS30 değeri: 394 m/s (komşu pikseller 272–437), yaklaşık TBDY karşılığı ZC (USGS eğim tabanlı vekil).
+- Haritada 11/16 nokta.
+
 ## 10.1.1 — 2026-11-22
 
 - Başlık sadeleşti: "Kayseri Develi Jeo-Tur | Erciyes–Zamantı Dijital Jeoturizm Atlası" (Seyhan, havza bağlantısı olarak içerikte ve haritada kalır).

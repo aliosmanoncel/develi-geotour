@@ -1,11 +1,12 @@
 {
- "surum": "10.1.1",
- "guncelleme": "2026-11-22",
+ "surum": "10.1.2",
+ "guncelleme": "2026-11-23",
  "aciklama": "Kayseri Develi Jeo-Tur v10 nokta verisi. Her nokta bir katmana aittir; konum ve içerik doğrulama durumu ayrı ayrı tutulur.",
  "konum_durumu": {
   "dogrulandi": "Koordinat bağımsız bir kaynaktan alındı (kaynak alanında belirtilir).",
   "yaklasik": "Koordinat yerleşim veya alan merkezidir; noktanın kendisi değildir.",
-  "yayimlanmadi": "Konum yayımlanmamış ya da doğrulanamadı; haritada işaret yok, yalnız listede."
+  "yayimlanmadi": "Konum yayımlanmamış ya da doğrulanamadı; haritada işaret yok, yalnız listede.",
+  "oneren": "Koordinat, öneren kişinin yerinden gönderdiği saha konumudur (harita işareti); bağımsız doğrulama bekliyor. Haritada doğrulanmamış işaretle gösterilir."
  },
  "icerik_durumu": {
   "dogrulandi": "Metindeki iddialar kaynaklarla doğrulandı.",
@@ -79,11 +80,11 @@
    "id": "mantar-kaya-yenice",
    "katman": "jeoloji",
    "ad": "Mezarlı Mantar Kaya (Yenice köyü, Develi)",
-   "lat": null,
-   "lon": null,
-   "konum": "yayimlanmadi",
+   "lat": 38.250423,
+   "lon": 35.683502,
+   "konum": "oneren",
    "icerik": "bekliyor",
-   "aciklama": "Gazeteci-yazar Nezir Ötegen'in önerisiyle eklendi (2026-11-21): Yenice'de üzerinde kaya mezarı bulunan bir mantar kaya. Mantar kayalar ve peribacaları, alttaki kolay aşınan katmanın üstteki dayanıklı katmana göre daha hızlı aşınmasıyla (farklı aşınma) şekillenir; bu süreçte yağış, kar erimesi, don, akarsu ve rüzgâr birlikte rol oynar. 'Dünyada benzeri yok' ve 'Buzul Çağı'na dayanan oluşum' ifadeleri öneri sahibinindir; bağımsız bir kaynakla henüz doğrulanmadı. Yaklaşık bölge (öneren tarafın tarifi, 2026-11-22): Hüseyinli köyü, Yenice köyü, Avlağa mezrası ve Gümüşören Barajı arasında, baraj kıyısında. Kesin koordinat yerinden gönderilecek; gelene kadar haritada işaret yok. Kaya mezarının tescil durumu bekleniyor.",
+   "aciklama": "Gazeteci-yazar Nezir Ötegen'in önerisiyle eklendi (2026-11-21): Yenice'de üzerinde kaya mezarı bulunan bir mantar kaya. Mantar kayalar ve peribacaları, alttaki kolay aşınan katmanın üstteki dayanıklı katmana göre daha hızlı aşınmasıyla (farklı aşınma) şekillenir; bu süreçte yağış, kar erimesi, don, akarsu ve rüzgâr birlikte rol oynar. 'Dünyada benzeri yok' ve 'Buzul Çağı'na dayanan oluşum' ifadeleri öneri sahibinindir; bağımsız bir kaynakla henüz doğrulanmadı. Yaklaşık bölge (öneren tarafın tarifi, 2026-11-22): Hüseyinli köyü, Yenice köyü, Avlağa mezrası ve Gümüşören Barajı arasında, baraj kıyısında. Konum 2026-11-23'te Nezir Ötegen tarafından harita işaretiyle gönderildi (38,25042 K, 35,68350 D; 38°15′01,5″ K, 35°41′00,6″ D) ve verilen bölge tarifiyle (Yenice – Gümüşören Barajı kesimi) çelişmiyor; bağımsız saha ya da uydu doğrulaması bekliyor. Kaya mezarının tescil durumu bekleniyor.",
    "kaynak": [
     {
      "t": "TÜBİTAK Bilim Çocuk — Peribacaları nasıl oluşur?",
@@ -99,7 +100,19 @@
    "oneren": "Nezir Ötegen (gazeteci-yazar)",
    "earth": "Yenice, Develi, Kayseri, Türkiye",
    "bolge_tarifi": "Hüseyinli – Yenice – Avlağa mezrası – Gümüşören Barajı arası, baraj kıyısı",
-   "kaynak_duzeyi": "yok"
+   "kaynak_duzeyi": "yok",
+   "konum_kaynagi": {
+    "t": "Nezir Ötegen — Google Maps konumu (38°15′01,5″ K, 35°41′00,6″ D)",
+    "u": "https://www.google.com/maps/place/38%C2%B015'01.5%22N+35%C2%B041'00.6%22E/@38.250423,35.6809268,779m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d38.250423!4d35.6835017?hl=en",
+    "tarih": "2026-11-23",
+    "tur": "oneren"
+   },
+   "vs30": {
+    "deger": 394,
+    "min3x3": 272,
+    "max3x3": 437,
+    "tbdy": "ZC"
+   }
   },
   {
    "id": "deprem-1940",
