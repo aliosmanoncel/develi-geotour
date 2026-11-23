@@ -38,13 +38,14 @@
 
 ## 3. Yeni eklenenler
 
+- **Bostanlık Yaylası Kırgıbayır (Şıhlı, Develi)** — Nezir Ötegen'in önerisi ve derlemesi (2026-11-22). Kırgıbayır tanımı genel jeomorfoloji bilgisidir; alanın kesin yeri, kayaç birimleri (kil/kum/tüf) ve turizm değeri bağımsız kaynakla doğrulanmadı. İşaret Şıhlı yerleşim merkezidir (yaklaşık), alanın kendisi değildir.
 - **Mezarlı Mantar Kaya (Yenice, Develi)** — Nezir Ötegen'in önerisi (2026-11-21). Konum ve "dünyada benzeri yok / Buzul Çağı" iddiaları doğrulama bekliyor. Oluşum açıklaması literatüre göre düzeltildi: farklı aşınma; yağış, kar erimesi, don, akarsu ve rüzgâr birlikte. "Mantar kaya = rüzgâr, peribacası = su" ayrımı kullanılmadı. Develi'de iki Yenice (Yenice, Sindelhöyük Yenice) bulunduğu not edildi.
 - **Erciyes gezgin arıcılığı** — AA haberi ve Sarıözkan vd. (2009); koordinat bekliyor.
 - **Erciyes Fayı** — Develi'ye en yakın Holosen fayı (normal + sol yanal), v9'da yoktu; MTA katmanında.
 
 ## 4. Açık konular (v10.0.1 itibarıyla)
 
-Haritada konumu gösterilen nokta sayısı: 16 noktadan 11 (2026-11-23: Mezarlı Mantar Kaya öneren konumuyla eklendi). Gösterilmeyenler: Gereme, Elbiz Parkı, Develi petroglifleri (koruma), Faraşa/Çamlıca, Erciyes gezgin arıcılığı.
+Haritada konumu gösterilen nokta sayısı: 17 noktadan 12 (2026-11-23: Mezarlı Mantar Kaya öneren konumuyla; Bostanlık Kırgıbayır yaklaşık konumla eklendi). Gösterilmeyenler: Gereme, Elbiz Parkı, Develi petroglifleri (koruma), Faraşa/Çamlıca, Erciyes gezgin arıcılığı.
 
 ### Kullanıcıdan beklenen doğrulamalar
 

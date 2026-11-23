@@ -23,7 +23,7 @@ Develi, Erciyes ve Zamantı Irmağı boyunca jeoloji, diri faylar, tarihsel depr
 
 ```
 index.html                         Uygulama (Leaflet 1.9.4, SRI)
-data/points.json                   16 nokta, kaynak ve doğrulama durumu
+data/points.json                   17 nokta, kaynak ve doğrulama durumu
 data/faults-mta2026-develi.geojson 608 fay objesi (MTA 2026 kesiti)
 data/vs30-usgs-kayseri.tif/.png    VS30 kesiti (USGS, eğim tabanlı yaklaşık)
 docs/MIMARI-DEGERLENDIRME.md       kafz-geowalk ve bal-yolu-harita karşılaştırması
@@ -54,7 +54,7 @@ Nokta kaynakları `data/points.json` içinde her noktanın `kaynak` alanındadı
 
 ## Katkı
 
-Mezarlı Mantar Kaya (Yenice) önerisi: Nezir Ötegen (gazeteci-yazar), 2026-11-21; konum işareti 2026-11-23 (öneren konumu, bağımsız doğrulama bekliyor).
+Mezarlı Mantar Kaya (Yenice) önerisi: Nezir Ötegen (gazeteci-yazar), 2026-11-21; konum işareti 2026-11-23 (öneren konumu, bağımsız doğrulama bekliyor). Bostanlık Yaylası Kırgıbayır (Şıhlı) önerisi ve derlemesi: Nezir Ötegen, 2026-11-22 (konum yaklaşık).
 
 ## Lisans
 

@@ -115,6 +115,33 @@
    }
   },
   {
+   "id": "kirgibayir-sihli-bostanlik",
+   "katman": "jeoloji",
+   "ad": "Bostanlık Yaylası Kırgıbayır (Badlands) Bölgesi (Şıhlı, Develi)",
+   "lat": 38.0883,
+   "lon": 35.6281,
+   "konum": "yaklasik",
+   "icerik": "bekliyor",
+   "aciklama": "Araştırmacı yazar Nezir Ötegen'in önerisiyle eklendi (derleme: 22 Kasım 2026). Kırgıbayır (badlands), kurak ve yarı kurak iklimde bitki örtüsünden yoksun yamaçların sağanak yağış ve sel sularıyla aşındırılmasıyla oluşan; girintili çıkıntılı, keskin sırtlı ve tarıma elverişsiz bir arazi biçimidir. Genellikle kil, kum ve volkanik tüf gibi kolay aşınan kayaçların bulunduğu eğimli yüzeylerde gelişir. Öneren tarafa göre Şıhlı'daki Bostanlık Yaylası kırgıbayır alanı son dönemde doğa turizmi açısından önem kazanmaktadır. Alanın kesin yeri ve kayaç birimleri henüz bilinmiyor: haritadaki işaret Şıhlı yerleşim merkezidir (yaklaşık), alanın kendisi değildir. Gerçek konum gelince güncellenecek.",
+   "kaynak": [],
+   "oneren": "Nezir Ötegen (araştırmacı yazar)",
+   "earth": "Şıhlı, Develi, Kayseri, Türkiye",
+   "bolge_tarifi": "Şıhlı – Bostanlık Yaylası (kesin konum bekleniyor)",
+   "kaynak_duzeyi": "yok",
+   "konum_kaynagi": {
+    "t": "Şıhlı yerleşim merkezi (GeoNames türevi koordinat; bamwor.com) — alanın kendisi değildir",
+    "u": "https://bamwor.com/en/countries/turkey/cities/sihli",
+    "tarih": "2026-11-23",
+    "tur": "yaklasik"
+   },
+   "vs30": {
+    "deger": 666,
+    "min3x3": 458,
+    "max3x3": 900,
+    "tbdy": "ZC"
+   }
+  },
+  {
    "id": "deprem-1940",
    "katman": "deprem",
    "ad": "1940 Develi (Kayseri) depremi",

@@ -4,7 +4,8 @@
 
 - Mezarlı Mantar Kaya (Yenice köyü): konum eklendi — 38,25042 K, 35,68350 D (38°15′01,5″ K, 35°41′00,6″ D). Koordinat, öneren Nezir Ötegen'in gönderdiği harita işaretidir; yeni konum durumu **"öneren konumu (doğrulanmadı)"** ile gösterilir (doğrulanmamış işaret biçimi). Bağımsız saha/uydu doğrulaması ve kaya mezarının tescil durumu bekliyor; içerik iddiaları değişmeden "doğrulama bekliyor".
 - Noktanın VS30 değeri: 394 m/s (komşu pikseller 272–437), yaklaşık TBDY karşılığı ZC (USGS eğim tabanlı vekil).
-- Haritada 11/16 nokta.
+- Yeni nokta: **Bostanlık Yaylası Kırgıbayır (Badlands) Bölgesi (Şıhlı)** — Nezir Ötegen'in önerisi ve derlemesi (22 Kasım 2026). Kesin yer bilinmiyor; işaret Şıhlı yerleşim merkezidir (konum durumu "yaklaşık"; GeoNames türevi koordinat 38,0883 K, 35,6281 D). Kaynak düzeyi "yok", içerik "doğrulama bekliyor". VS30 666 m/s (458–900), ≈ ZC.
+- Haritada 12/17 nokta.
 
 ## 10.1.1 — 2026-11-22
 
