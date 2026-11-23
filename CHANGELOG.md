@@ -5,6 +5,7 @@
 - **Google Earth bağlantısı koordinata gider.** Önceden düğme yer adını arıyordu (ör. Mezarlı Mantar Kaya → "Yenice, Develi" köyü). Artık koordinatı olan 12 noktada bağlantı doğrudan noktanın koordinatını açar; koordinatsız 5 noktada ad araması kalır. Düğme etiketi hangisi olduğunu söyler: "Google Earth (koordinat)" / "(ad araması)".
 - Doğrulanmamış ya da yaklaşık konumlarda (ör. Kırgıbayır = Şıhlı merkezi) bağlantının ipucu ve açılır penceresi, işaretin yerin kendisi olmayabileceğini belirtir.
 - Amaç: kaynaklı bilgi (atlas kartı, Zotero/web) → Google Earth 3B'de yerin kendisi.
+- Bostanlık Yaylası Kırgıbayır: işaret Nezir Ötegen'in verdiği Şıhlı Mahallesi yaklaşık koordinatına taşındı (38,089999 K, 35,626996 D; alternatif kaynaklarda 38,0738726 K, 35,6407213 D, kayıtta tutulur). Konum durumu "yaklaşık" kalır: alanın kendisi değildir. VS30 yeniden hesaplandı.
 
 ## 10.1.2 — 2026-11-23
 
